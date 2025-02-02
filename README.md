@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Divsea nextjs project
+Open public [figma](https://www.figma.com/design/VcgXyogEdaIAhaVBPlf5nC/DiveSea?node-id=5-1960&p=f&t=c55wiRbmM0GgrGjK-0) design 
+
 ## Getting Started
 
 First, run the development server:

@@ -1,0 +1,90 @@
+@use "typography" as typography;
+@use "media";
+@use "variables";
+
+html {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    opacity: 0;
+    display: none;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #F9F9F9;
+  line-height: 24px;
+  position: relative;
+  overflow-x: hidden !important;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+
+  @include typography.P1;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 1251px;
+  margin: auto;
+
+  @include media.breakpoint-down('deskS'){
+    width: 889.68px;
+  }
+
+  @include media.breakpoint-down('tabM') {
+    width: 100%;
+    padding-inline: 48px;
+  }
+
+  @include media.breakpoint-down('mobM') {
+    padding-inline: 30px;
+  }
+}
+
+.textAnimation {
+  opacity: 0;
+  transition: 1.5s variables.$transition-type;
+  transform: translate3d(0, 50px, 0);
+}
+.textActive {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: #989898;
+}
+
+h1 {
+  @include typography.H1;
+  margin-bottom: 16px;
+}
+h2 {
+  color: #E3E3E3;
+  @include typography.H2;
+}
+h3 {
+  @include typography.H3;
+}
+h4 {
+  @include typography.H4;
+}
+h5 {
+  @include typography.H5;
+}
+h6 {
+  @include typography.H6;
+}
+p {
+  @include typography.P1;
+}
+

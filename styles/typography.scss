@@ -1,0 +1,121 @@
+@use 'media' as media;
+
+@mixin H1 {
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 90px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -3px;
+
+
+  @include media.breakpoint-down('deskS') {
+    font-size: 53.34px;
+    line-height: 64.01px;
+    letter-spacing: -2.133547067642212px;
+    text-underline-position: from-font;
+  }
+
+  @include media.breakpoint-down('mobM') {
+    font-size: 47.4px;
+    font-weight: 600;
+    line-height: 56.88px;
+    letter-spacing: -1.895965337753296px;
+    text-align: center;
+    text-underline-position: from-font;
+  }
+}
+@mixin H2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 26.92px;
+
+
+  @include media.breakpoint-down('deskS') {
+    font-size: 32.03px;
+    font-weight: 600;
+    line-height: 31.83px;
+
+  }
+
+  @include media.breakpoint-down('mobM') {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 44.75px;
+  }
+}
+
+@mixin H3 {
+  font-size: 36.77px;
+  font-weight: 600;
+  line-height: 45.96px;
+
+  @include media.breakpoint-down('deskS') {
+    font-size: 26.15px;
+    font-weight: 600;
+    line-height: 32.69px;
+  }
+
+  @include media.breakpoint-down('mobM') {
+    font-size: 24px;
+    line-height: 42px;
+  }
+}
+
+@mixin H4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin H5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin H6 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@mixin P1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+
+  @include media.breakpoint-down('deskS') {
+    font-size: 12.8px;
+    line-height: 19.91px;
+  }
+
+  @include media.breakpoint-down('mobM') {
+    font-weight: 400;
+    font-size: 11.38px;
+    line-height: 17.7px;
+  }
+}
+
+@mixin P2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin P3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin P4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  @include media.breakpoint-down('mobM') {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

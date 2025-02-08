@@ -1,0 +1,82 @@
+@use '@/styles/variables';
+@use '@/styles/media';
+
+.button {
+  border: none;
+  background: transparent;
+  padding: 18px 30px;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s variables.$transition-type;
+
+  &-primary, &-outline {
+    border-radius: 12.41px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16.27px;
+    font-weight: 500;
+    line-height: 24.41px;
+    letter-spacing: 0.01em;
+
+    @include media.breakpoint-down('deskS'){
+      font-size: 11.57px;
+      font-weight: 500;
+      line-height: 17.36px;
+      letter-spacing: 0.01em;
+      padding: 12px 20px;
+    }
+    @include media.breakpoint-down('tabM'){
+      font-size: 11.66px;
+      font-weight: 500;
+      line-height: 17.49px;
+      letter-spacing: 0.01em;
+    }
+    @include media.breakpoint-down('mobM') {
+      padding: 14px 17px;
+    }
+  }
+
+  &-primary {
+    background: variables.$black;
+    color: variables.$white;
+
+    &:hover {
+      background: variables.$black1Hover;
+    }
+    &:active {
+      background: variables.$black1Active;
+    }
+  }
+  &-outline {
+    border: 1.07px solid variables.$black;
+    color: variables.$black;
+
+    &:hover {
+      background: variables.$blackHover;
+      color: variables.$white;
+    }
+    &:active {
+      background: variables.$blackActive;
+      color: variables.$white;
+    }
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.burger {
+    width: 32px;
+    height: 20px;
+    display: none;
+    padding: 0;
+
+    @include media.breakpoint-down('tabM'){
+      display: flex;
+    }
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+

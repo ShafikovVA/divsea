@@ -1,0 +1,103 @@
+@use "styles/media";
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 38.82px 11.76px 58.81px 0 #C7C7C799;
+
+  @include media.breakpoint-down('deskS') {
+    padding: 10px;
+  }
+
+  &__picture {
+    width: 252.9px;
+    height: 252.9px;
+    margin-bottom: 19px;
+
+    @include media.breakpoint-down('deskS') {
+      width: 179.86px;
+      height: 179.86px;
+      margin-bottom: 14px;
+    }
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 21.17px;
+    line-height: 29.64px;
+    letter-spacing: 0;
+    padding-bottom: 14px;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 15.06px;
+      line-height: 21.08px;
+      padding-bottom: 10.04px;
+    }
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: #141416;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16.47px;
+    line-height: 24.7px;
+    letter-spacing: 0;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 11.63px;
+      line-height: 17.44px;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: #94A3B8;
+      font-weight: 400;
+      font-size: 14.12px;
+      line-height: 21.17px;
+      letter-spacing: 0.12px;
+
+
+      @include media.breakpoint-down('deskS') {
+        font-size: 10.04px;
+        line-height: 15.06px;
+        letter-spacing: 0.08px;
+
+      }
+    }
+    img {
+      @include media.breakpoint-down('deskS') {
+        width: 14.949402809143066px;
+        height: 14.949402809143066px;
+
+      }
+    }
+  }
+
+  button {
+    @include media.breakpoint-down('deskS') {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 9.97px;
+      line-height: 14.95px;
+      letter-spacing: 0.08px;
+
+    }
+  }
+}

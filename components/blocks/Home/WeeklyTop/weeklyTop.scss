@@ -1,0 +1,40 @@
+@use 'styles/media';
+.weekly-top {
+  background: #F1F1F1;
+  padding: 70px 0 90px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  @include media.breakpoint-down('deskS') {
+    padding: 50px 0 64px 0;
+    gap: 60px;
+  }
+  @include media.breakpoint-down('mobM') {
+    gap: 52px;
+  }
+
+  .swiper {
+    width: 100%;
+    overflow: visible;
+    &-slide {
+      width: fit-content;
+    }
+  }
+
+  .slider {
+    width: 780px;
+
+    &__buttons {
+      @include media.breakpoint-down('deskL') {
+        margin-top: 25px;
+      }
+      @include media.breakpoint-down('mobM') {
+        margin-top: 7px;
+      }
+    }
+  }
+}

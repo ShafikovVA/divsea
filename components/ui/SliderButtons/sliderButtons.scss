@@ -1,0 +1,71 @@
+@use 'styles/typography';
+@use 'styles/media';
+@use 'styles/variables';
+
+.slider {
+  &__buttons {
+    display: flex;
+    align-items: center;
+    background: #FCFCFD;
+    gap: 35px;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 43.12px 34.49px -25.87px #0F0F0F1F;
+    padding: 22px;
+    width: fit-content;
+    border-radius: 17.25px;
+
+    @include media.breakpoint-down('deskS') {
+      padding: 15px;
+      gap: 25px;
+      box-shadow: 0 30.66px 24.53px -18.4px #0F0F0F1F;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      padding: 12px;
+      gap: 18px;
+      box-shadow: 0 22.99px 18.39px -13.79px #0F0F0F1F;
+    }
+
+    &-border {
+      height: 25.87px;
+      width: 2.16px;
+      background: #E6E8EC;
+
+      @include media.breakpoint-down('deskS') {
+        height: 18.4px;
+      }
+      @include media.breakpoint-down('mobM') {
+        height: 13px;
+      }
+    }
+
+    .button-left, .button-right {
+      width: 25.87px;
+      height: 25.87px;
+      cursor: pointer;
+
+      @include media.breakpoint-down('deskS') {
+        width: 18.42px;
+        height: 18.42px;
+      }
+      @include media.breakpoint-down('mobM') {
+        width: 13.79px;
+        height: 13.79px;
+      }
+
+      &.disabled, &.swiper-button-disabled {
+        cursor: not-allowed;
+        svg {
+          fill: #929292;
+        }
+      }
+
+      svg {
+        width: inherit;
+        height: inherit;
+        fill: #23262F;
+      }
+    }
+  }
+}

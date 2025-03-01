@@ -11,10 +11,11 @@
 
   @include media.breakpoint-down('deskS') {
     padding: 50px 0 64px 0;
-    gap: 60px;
+    gap: 67px;
   }
   @include media.breakpoint-down('mobM') {
     gap: 52px;
+    padding: 57px 0 67px 0;
   }
 
   .swiper {
@@ -29,12 +30,23 @@
     width: 780px;
 
     &__buttons {
-      @include media.breakpoint-down('deskL') {
+      margin-top: 10px;
+      @include media.breakpoint-down('deskS') {
         margin-top: 25px;
       }
       @include media.breakpoint-down('mobM') {
         margin-top: 7px;
       }
+    }
+  }
+
+  h2 {
+    line-height: 26.92px;
+    @include media.breakpoint-down('deskS') {
+      line-height: 19.14px;
+    }
+    @include media.breakpoint-down('mobM') {
+      line-height: 26.92px;
     }
   }
 }

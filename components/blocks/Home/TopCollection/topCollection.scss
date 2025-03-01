@@ -1,0 +1,325 @@
+@use '@/styles/media';
+
+.top-collection {
+  padding: 236.41px 0 100px 0;
+
+  @include media.breakpoint-down('deskS') {
+    padding: 168px 0 100px 0;
+  }
+  @include media.breakpoint-down('mobM') {
+    padding: 79px 0;
+  }
+
+  .container  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+
+    @include media.breakpoint-down('deskS') {
+      gap: 61px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      gap: 38px;
+    }
+  }
+
+  h2 {
+    color: #000;
+  }
+
+  &__table {
+    width: 100%;
+  }
+  &__tableHeaderCell {
+    color: #93989A;
+    padding-bottom: 3px;
+
+    @include media.breakpoint-down('deskS') {
+      font-weight: 500;
+      font-size: 15.65px;
+      line-height: 20.34px;
+      letter-spacing: 1px;
+    }
+    @include media.breakpoint-down('mobM') {
+      font-size: 14px;
+      line-height: 18.2px;
+      padding-bottom: 12px;
+    }
+
+    &:nth-child(1) {
+      width: 400px;
+      text-align: start;
+    }
+    &:nth-child(2) {
+      width: 150px;
+      text-align: start;
+      padding-left: 25px;
+
+      @include media.breakpoint-down('deskS') {
+        padding-left: 39px;
+        text-align: right ;
+      }
+    }
+    &:nth-child(3) {
+      width: 150px;
+
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(4) {
+      width: 150px;
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(5) {
+      width: 150px;
+      text-align: right;
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(6) {
+      width: 150px;
+      text-align: right;
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+  }
+  td {
+    padding-top: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1.69px solid #EBE9E9;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 23.65px;
+    line-height: 30.75px;
+    letter-spacing: 1px;
+
+    @include media.breakpoint-down('deskS') {
+      padding-top: 30px;
+      padding-bottom: 20px;
+      font-weight: 500;
+      font-size: 17.43px;
+      line-height: 22.66px;
+      letter-spacing: 0.5px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      height: 70px;
+      padding-top: 12px;
+      padding-bottom: 17px;
+    }
+
+    &:nth-child(2) {
+      .top-collection__collectinPrice {
+        justify-content: start;
+      }
+    }
+
+    &:nth-child(3) {
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(4) {
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(5) {
+      text-align: right;
+      padding-right: 24px;
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+    &:nth-child(6) {
+      text-align: right;
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+  }
+  tbody > tr:first-child > td {
+    border-top: none;
+  }
+  &__collectionBlock {
+    display: flex;
+    gap: 23px;
+
+    @include media.breakpoint-down('deskS') {
+      gap: 24px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      gap: 18px
+    }
+
+    img {
+      width: 84px;
+      height: 84px;
+      border-radius: 1750.91px;
+      border: 3.5px solid #FFFFFF;
+
+      @include media.breakpoint-down('deskS') {
+        width: 53px;
+        height: 53px;
+        border-radius: 1245.22px;
+        border-width: 2.49px;
+      }
+
+      @include media.breakpoint-down('mobM') {
+        width: 46px;
+        height: 46px;
+        top: 0.27px;
+        border-radius: 963.3px;
+        border-width: 1.93px;
+      }
+
+    }
+  }
+  &__collectionBLockText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.75px;
+  }
+  &__collectionUser {
+    font-weight: 500;
+    font-size: 28.01px;
+    line-height: 39.22px;
+    letter-spacing: 0;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 19.92px;
+      line-height: 27.89px;
+      letter-spacing: 0.5px;
+    }
+    @include media.breakpoint-down('mobM') {
+      font-size: 15.41px;
+      line-height: 21.58px;
+    }
+  }
+  &__collectionByUser {
+    font-weight: 400;
+    font-size: 22.76px;
+    line-height: 34.14px;
+    letter-spacing: 0;
+    color: #64748B;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 16.19px;
+      line-height: 24.28px;
+      letter-spacing: 0;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      font-size: 12.52px;
+      line-height: 18.78px;
+    }
+  }
+  &__collectionPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5px;
+    font-weight: 600;
+    font-size: 24.51px;
+    line-height: 34.32px;
+    letter-spacing: 0;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 17.43px;
+      line-height: 24.41px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      font-size: 15.41px;
+      line-height: 21.58px;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+
+      @include media.breakpoint-down('deskS') {
+        width: 22px;
+        height: 22px;
+      }
+      @include media.breakpoint-down('mobM') {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+  &__plus {
+    color: #10C352;
+
+    @include media.breakpoint-down('mobM') {
+      font-weight: 400;
+      font-size: 13.49px;
+      line-height: 20.23px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__tdContainer {
+    @include media.breakpoint-down('mobM') {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: end;
+    }
+    .top-collection__plus {
+      display: none;
+
+      @include media.breakpoint-down('mobM') {
+        display: flex;
+        text-align: right;
+      }
+    }
+  }
+
+  a {
+    color: #ACADB9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 17.67px;
+    line-height: 39.92px;
+    letter-spacing: -0.09px;
+    text-align: right;
+
+    margin-top: -5px;
+    margin-right: 10px;
+    align-self: end;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 12.57px;
+      line-height: 28.39px;
+      letter-spacing: -0.06px;
+      margin-top: -1px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      align-self: center;
+      margin: 0;
+    }
+
+    svg {
+      @include media.breakpoint-down('deskS') {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}

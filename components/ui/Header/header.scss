@@ -5,8 +5,8 @@
   padding-bottom: 15px;
 
   @include media.breakpoint-down('deskS') {
-    padding-top: 32px;
-    padding-bottom: 10px;
+    padding-top: 28px;
+    padding-bottom: 13px;
   }
   @include media.breakpoint-down('tabM') {
     padding-bottom: 0;

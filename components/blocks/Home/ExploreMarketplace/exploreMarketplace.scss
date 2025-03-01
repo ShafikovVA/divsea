@@ -1,0 +1,197 @@
+@use '@/styles/media';
+
+.exploreMarketplace {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media.breakpoint-down('mobM') {
+      padding-inline: 43px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 55px;
+    text-align: center;
+    @include media.breakpoint-down('deskS') {
+      margin-bottom: 40px;
+    }
+    @include media.breakpoint-down('mobM') {
+      line-height: 37.5px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__filters {
+    margin-bottom: 100px;
+    display: flex;
+    gap: 22px;
+
+    @include media.breakpoint-down('deskS') {
+      gap: 16px;
+      margin-bottom: 74px;
+    }
+    @include media.breakpoint-down('mobM') {
+      gap: 14px;
+    }
+  }
+
+  &__filter {
+    height: 56px;
+    border-radius: 13.26px;
+    padding: 17.68px;
+    border: 2.21px solid #141416;
+
+    font-weight: 600;
+    font-size: 15.47px;
+    line-height: 23.21px;
+    letter-spacing: 0.22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    @include media.breakpoint-down('deskS') {
+      padding: 12.58px;
+      font-size: 11px;
+      line-height: 16.51px;
+      letter-spacing: 0.16px;
+      height: 39.83px;
+      border-width: 1.57px;
+      gap: 6px;
+      border-radius: 9.43px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      padding: 11.34px;
+      font-weight: 600;
+      font-size: 9.92px;
+      line-height: 14.88px;
+      letter-spacing: 0.14px;
+      gap: 5.67px;
+      height: 36.02px;
+    }
+    
+    &:first-child {
+      @include media.breakpoint-down('mobM') {
+        display: none;
+      }
+    }
+
+    svg {
+      @include media.breakpoint-down('deskS') {
+        width: 17px;
+        height: 17px;
+      }
+      @include media.breakpoint-down('mobM') {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 65px 40px;
+    flex-wrap: wrap;
+    margin-bottom: 103px;
+    justify-content: center;
+
+    @include media.breakpoint-down('deskS') {
+      gap: 48px 24.82px;
+      margin-bottom: 82px;
+    }
+    @include media.breakpoint-down('mobM') {
+      gap: 36px;
+      margin-bottom: 51px;
+    }
+  }
+
+  .product-card {
+    @include media.breakpoint-down('mobM') {
+      width: 283px;
+      height: 405px;
+      padding: 14px 14px 20px 14px;
+    }
+
+    .product-card__picture {
+      @include media.breakpoint-down('mobM') {
+        width: 254px;
+        height: 254px;
+        margin-bottom: 19px;
+      }
+    }
+    .product-card__title {
+      @include media.breakpoint-down('mobM') {
+        font-size: 21.35px;
+        line-height: 29.89px;
+        letter-spacing: 0;
+        padding-bottom: 14.23px;
+      }
+    }
+    .product-card__price-text {
+      font-size: 14.23px;
+      line-height: 21.35px;
+      letter-spacing: 0.12px;
+    }
+    .product-card__price {
+      font-size: 16.6px;
+      line-height: 24.91px;
+      letter-spacing: 0;
+
+      img {
+        width: 21px;
+        height: 21px;
+      }
+    }
+    button {
+      @include media.breakpoint-down('mobM') {
+        width: 122px;
+        height: 52px;
+        border-radius: 11.86px;
+        font-size: 14.23px;
+        line-height: 21.35px;
+        letter-spacing: 0.12px;
+      }
+    }
+    &:nth-last-child(-n + 4) {
+      display: none;
+    }
+  }
+
+  a {
+    color: #ACADB9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 17.67px;
+    line-height: 39.92px;
+    letter-spacing: -0.09px;
+    text-align: right;
+
+    margin-right: 10px;
+    align-self: end;
+
+    @include media.breakpoint-down('deskS') {
+      font-size: 12.57px;
+      line-height: 28.39px;
+      letter-spacing: -0.06px;
+    }
+
+    @include media.breakpoint-down('mobM') {
+      align-self: center;
+      margin: 0;
+    }
+
+    svg {
+      @include media.breakpoint-down('deskS') {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}

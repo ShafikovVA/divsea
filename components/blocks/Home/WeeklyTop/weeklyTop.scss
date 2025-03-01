@@ -14,8 +14,8 @@
     gap: 67px;
   }
   @include media.breakpoint-down('mobM') {
-    gap: 52px;
-    padding: 57px 0 67px 0;
+    gap: 63px;
+    padding: 57px 0 53px 0;
   }
 
   .swiper {
@@ -41,6 +41,7 @@
   }
 
   h2 {
+    color: #C5C5C5;
     line-height: 26.92px;
     @include media.breakpoint-down('deskS') {
       line-height: 19.14px;

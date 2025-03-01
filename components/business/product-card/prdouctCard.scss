@@ -3,24 +3,32 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  padding: 14px;
+  padding: 14px 14px 25px 14px;
   background: #FFFFFF;
   border-radius: 24px;
   box-shadow: 38.82px 11.76px 58.81px 0 #C7C7C799;
+  width: 281.13px;
 
   @include media.breakpoint-down('deskS') {
     padding: 10px;
+    width: 199.93px;
+    border-radius: 16.7px;
+  }
+  @include media.breakpoint-down('mobM') {
+    width: 198.49px;
   }
 
   &__picture {
     width: 252.9px;
     height: 252.9px;
     margin-bottom: 19px;
+    border-radius: 23.48px;
 
     @include media.breakpoint-down('deskS') {
       width: 179.86px;
       height: 179.86px;
       margin-bottom: 14px;
+      border-radius: 16.7px;
     }
 
     img {
@@ -91,13 +99,25 @@
   }
 
   button {
+    width: 122px;
+    height: 51px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     @include media.breakpoint-down('deskS') {
       font-family: "Poppins", sans-serif;
       font-weight: 700;
       font-size: 9.97px;
       line-height: 14.95px;
       letter-spacing: 0.08px;
-
+      width: 86px;
+      height: 36px;
+      padding: 10px;
+      border-radius: 8.37px;
+    }
+    @include media.breakpoint-down('mobM') {
     }
   }
 }

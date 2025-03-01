@@ -1,13 +1,13 @@
 @use '@/styles/media';
 
 .top-collection {
-  padding: 236.41px 0 100px 0;
+  padding: 236.41px 0 93px 0;
 
   @include media.breakpoint-down('deskS') {
-    padding: 168px 0 100px 0;
+    padding: 168px 0 66px 0;
   }
   @include media.breakpoint-down('mobM') {
-    padding: 79px 0;
+    padding: 79px 0 100px 0;
   }
 
   .container  {
@@ -299,7 +299,7 @@
     letter-spacing: -0.09px;
     text-align: right;
 
-    margin-top: -5px;
+    margin-top: -8px;
     margin-right: 10px;
     align-self: end;
 

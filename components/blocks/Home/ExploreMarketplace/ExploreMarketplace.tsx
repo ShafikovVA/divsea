@@ -1,6 +1,6 @@
 import './exploreMarketplace.scss';
-import Button from "@/components/ui/Button/Button";
-import ProductCard from "@/components/business/product-card/ProductCard";
+import Button from '@/components/ui/Button/Button';
+import ProductCard from '@/components/business/product-card/ProductCard';
 
 const ExploreMarketplace = () => {
   return (
@@ -8,58 +8,98 @@ const ExploreMarketplace = () => {
       <div className="container">
         <h2>Explore Marketplace</h2>
         <div className="exploreMarketplace__filters">
-          <Button className='exploreMarketplace__filter'>All</Button>
-          <Button className='exploreMarketplace__filter'>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Button className="exploreMarketplace__filter">All</Button>
+          <Button className="exploreMarketplace__filter">
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M17.9933 2.56152H7.20502C5.58888 2.56152 4.2666 3.87331 4.2666 5.49994V20.6014C4.2666 22.228 5.58888 23.5503 7.20502 23.5503H17.9933C19.6199 23.5503 20.9317 22.228 20.9317 20.6014V5.49994C20.9317 3.87331 19.6199 2.56152 17.9933 2.56152ZM8.28597 17.7049H16.9123C17.3531 17.7049 17.6994 18.0617 17.6994 18.492C17.6994 18.9223 17.3531 19.2791 16.9123 19.2791H8.28597C7.8557 19.2791 7.49889 18.9223 7.49889 18.492C7.49889 18.0617 7.8557 17.7049 8.28597 17.7049ZM7.49889 13.0979C7.49889 12.6676 7.8557 12.3108 8.28597 12.3108H16.9123C17.3531 12.3108 17.6994 12.6676 17.6994 13.0979C17.6994 13.5386 17.3531 13.885 16.9123 13.885H8.28597C7.8557 13.885 7.49889 13.5386 7.49889 13.0979ZM16.9123 8.49084H8.28597C7.8557 8.49084 7.49889 8.14453 7.49889 7.70376C7.49889 7.27349 7.8557 6.91669 8.28597 6.91669H16.9123C17.3531 6.91669 17.6994 7.27349 17.6994 7.70376C17.6994 8.14453 17.3531 8.49084 16.9123 8.49084Z"
-                fill="black"/>
+                fill="black"
+              />
             </svg>
             Category
           </Button>
-          <Button className='exploreMarketplace__filter'>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Button className="exploreMarketplace__filter">
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M19.5349 2.60352H6.58476C4.37045 2.60352 2.56543 4.40855 2.56543 6.62286V19.5729C2.56543 21.7872 4.37045 23.5923 6.58476 23.5923H19.5349C21.4448 23.5923 23.04 22.249 23.4492 20.465C23.5122 20.3495 23.5542 20.2236 23.5542 20.0872V6.62286C23.5542 4.40855 21.7492 2.60352 19.5349 2.60352ZM20.3219 14.1788C20.3219 14.6091 19.9651 14.9659 19.5349 14.9659C19.0941 14.9659 18.7478 14.6091 18.7478 14.1788V12.017C18.7478 11.5867 19.0941 11.2299 19.5349 11.2299C19.9651 11.2299 20.3219 11.5867 20.3219 12.017V14.1788ZM5.79769 14.1788V12.017C5.79769 11.5867 6.15449 11.2299 6.58476 11.2299C7.02553 11.2299 7.37184 11.5867 7.37184 12.017V14.1788C7.37184 14.6091 7.02553 14.9659 6.58476 14.9659C6.15449 14.9659 5.79769 14.6091 5.79769 14.1788ZM17.0791 9.86563V16.3302C17.0791 16.7709 16.7328 17.1172 16.2921 17.1172C15.8618 17.1172 15.505 16.7709 15.505 16.3302V9.86563C15.505 9.42486 15.8618 9.07855 16.2921 9.07855C16.7328 9.07855 17.0791 9.42486 17.0791 9.86563ZM13.8469 7.70379V18.492C13.8469 18.9223 13.4901 19.2791 13.0598 19.2791C12.6295 19.2791 12.2727 18.9223 12.2727 18.492V7.70379C12.2727 7.27352 12.6295 6.91671 13.0598 6.91671C13.4901 6.91671 13.8469 7.27352 13.8469 7.70379ZM10.6146 9.86563V16.3302C10.6146 16.7709 10.2578 17.1172 9.82756 17.1172C9.38679 17.1172 9.04048 16.7709 9.04048 16.3302V9.86563C9.04048 9.42486 9.38679 9.07855 9.82756 9.07855C10.2578 9.07855 10.6146 9.42486 10.6146 9.86563Z"
-                fill="black"/>
+                fill="black"
+              />
             </svg>
             Collection
           </Button>
-          <Button className='button exploreMarketplace__filter'>
-            <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Button className="button exploreMarketplace__filter">
+            <svg
+              width="27"
+              height="26"
+              viewBox="0 0 27 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M12.6548 9.96387V11.9788C11.8992 11.7899 11.3955 11.3596 11.3955 10.9713C11.3955 10.5725 11.8992 10.1423 12.6548 9.96387Z"
-                fill="black"/>
+                fill="black"
+              />
               <path
                 d="M15.4878 14.7487C15.4878 15.137 14.9841 15.5672 14.2285 15.7561V13.7412C14.9841 13.9196 15.4878 14.3499 15.4878 14.7487Z"
-                fill="black"/>
+                fill="black"
+              />
               <path
                 d="M20.6726 5.61883C18.7416 3.68786 16.1705 2.62793 13.442 2.62793C10.7134 2.62793 8.14232 3.68786 6.21135 5.61883C4.26989 7.54979 3.20996 10.1209 3.20996 12.86C3.20996 14.2032 3.47232 15.5255 3.98655 16.7744C4.50077 18.0232 5.25637 19.1356 6.21135 20.0906C7.15585 21.0456 8.27875 21.7907 9.52758 22.3049C10.7764 22.8296 12.0882 23.092 13.442 23.092C14.7958 23.092 16.1076 22.8296 17.3564 22.3049C18.6052 21.7907 19.7281 21.0456 20.6726 20.0906C21.6276 19.1356 22.3832 18.0232 22.8974 16.7744C23.4116 15.5255 23.674 14.2032 23.674 12.86C23.674 10.1209 22.6141 7.54979 20.6726 5.61883ZM14.2291 17.362V17.5824C14.2291 18.0127 13.8723 18.3695 13.442 18.3695C13.0117 18.3695 12.6549 18.0127 12.6549 17.5824V17.3515C11.7314 17.2046 10.9128 16.8058 10.3881 16.2077C10.1572 15.9348 10.1363 15.536 10.3461 15.2422C10.556 14.9378 10.9338 14.8329 11.2696 14.9588L12.6549 15.4835V13.5736C11.0178 13.3217 9.82142 12.2618 9.82142 10.971C9.82142 9.66966 11.0178 8.62022 12.6549 8.35786V8.13748C12.6549 7.69672 13.0117 7.3504 13.442 7.3504C13.8723 7.3504 14.2291 7.69672 14.2291 8.13748V8.35786C15.1526 8.51528 15.9711 8.91407 16.4958 9.50175C16.7267 9.77461 16.7477 10.1734 16.5378 10.4777C16.3909 10.6876 16.1495 10.8136 15.8977 10.8136C15.8032 10.8136 15.7088 10.7926 15.6143 10.7611L14.2291 10.2259V12.1358C15.8662 12.3877 17.0625 13.4476 17.0625 14.7489C17.0625 16.0502 15.8662 17.0997 14.2291 17.362Z"
-                fill="black"/>
+                fill="black"
+              />
             </svg>
             Price
           </Button>
         </div>
         <div className="exploreMarketplace__cards">
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
-          <ProductCard/>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
-        <a href="#">Explore All
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.82129 8.35059H15.7861" stroke="#ACADB9" stroke-width="1.99471" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M8.80176 1.36621L15.7841 8.34859L8.80176 15.331" stroke="#ACADB9" stroke-width="1.99471"
-                  stroke-linecap="round" stroke-linejoin="round"/>
+        <a href="#a">
+          Explore All
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.82129 8.35059H15.7861"
+              stroke="#ACADB9"
+              strokeWidth="1.99471"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8.80176 1.36621L15.7841 8.34859L8.80176 15.331"
+              stroke="#ACADB9"
+              strokeWidth="1.99471"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 export default ExploreMarketplace;

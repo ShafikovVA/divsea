@@ -1,11 +1,10 @@
 import './prdouctCard.scss';
-import Image from "next/image";
+import Image from 'next/image';
 import nft1 from '@/assets/images/blocks/hero/nft-1.png';
 import ethereum from '@/assets/icons/ethereum.svg';
-import Button from "@/components/ui/Button/Button";
+import Button from '@/components/ui/Button/Button';
 
 export const ProductCard = () => {
-
   return (
     <div className="product-card">
       <div className="product-card__picture">
@@ -23,7 +22,7 @@ export const ProductCard = () => {
         <Button className="button-primary">PLACE BID</Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ProductCard;

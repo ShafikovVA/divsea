@@ -1,15 +1,13 @@
-'use client'
+'use client';
 import './weeklyTop.scss';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import ProductCard from "@/components/business/product-card/ProductCard";
-import {Navigation} from "swiper/modules";
-import SliderButtons from "@/components/ui/SliderButtons/SliderButtons";
-
+import ProductCard from '@/components/business/product-card/ProductCard';
+import { Navigation } from 'swiper/modules';
+import SliderButtons from '@/components/ui/SliderButtons/SliderButtons';
 
 const WeeklyTop = () => {
-
   const swiperBreakpointsConfig = {
     0: {
       spaceBetween: 28.13,
@@ -19,7 +17,7 @@ const WeeklyTop = () => {
     },
     1366: {
       spaceBetween: 39.84,
-    }
+    },
   };
 
   return (
@@ -32,40 +30,39 @@ const WeeklyTop = () => {
         modules={[Navigation]}
         initialSlide={3}
         breakpoints={swiperBreakpointsConfig}
-        navigation={
-          {
-            nextEl: '.weekly-top__next',
-            prevEl: '.weekly-top__prev',
-          }
-        }
+        navigation={{
+          nextEl: '.weekly-top__next',
+          prevEl: '.weekly-top__prev',
+        }}
       >
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductCard/>
+          <ProductCard />
         </SwiperSlide>
       </Swiper>
       <SliderButtons
         cssMode={true}
-        nextButtonClassName='weekly-top__next'
-        prevButtonClassName='weekly-top__prev' />
+        nextButtonClassName="weekly-top__next"
+        prevButtonClassName="weekly-top__prev"
+      />
     </section>
-  )
-}
+  );
+};
 export default WeeklyTop;

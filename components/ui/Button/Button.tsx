@@ -1,5 +1,5 @@
 import './button.scss';
-import {ReactNode} from "react";
+import { ReactNode } from 'react';
 
 interface IButton {
   children?: ReactNode;
@@ -9,13 +9,17 @@ interface IButton {
 }
 
 const Button = (buttonProps: IButton) => {
-  const {children, className, onClick, disabled} = buttonProps;
+  const { children, className, onClick, disabled } = buttonProps;
 
   return (
-    <button className={`button ${className}`} onClick={onClick} disabled={disabled}>
+    <button
+      className={`button ${className}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
-}
+};
 
 export default Button;

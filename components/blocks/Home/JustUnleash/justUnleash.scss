@@ -1,0 +1,49 @@
+@use 'styles/media';
+@use 'styles/variables';
+
+.justUnleash {
+  padding: 103px 0 180px 0;
+
+  @include media.breakpoint-down('deskS') {
+    padding: 73px 0 128px 0;
+  }
+  @include media.breakpoint-down('mobM') {
+    padding: 164px 0 121px 0;
+  }
+
+  .container {
+    border-top: thin solid #CBCBCB;
+    padding-top: 75px;
+    display: flex;
+    gap: 102px;
+  }
+
+  &__text {
+    width: 461px;
+  }
+  &__title {
+    letter-spacing: -2px;
+    margin-bottom: 45px;
+    span {
+      color: #C5C5C5;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 70px;
+  }
+  &__listItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+  }
+  button {
+    display: flex;
+    gap: 12px;
+  }
+}

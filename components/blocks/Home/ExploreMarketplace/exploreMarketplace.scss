@@ -157,7 +157,9 @@
       }
     }
     &:nth-last-child(-n + 4) {
-      display: none;
+      @include media.breakpoint-down('tabM') {
+        display: none;
+      }
     }
   }
 

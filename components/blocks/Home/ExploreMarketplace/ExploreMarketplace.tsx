@@ -1,6 +1,6 @@
 import './exploreMarketplace.scss';
 import Button from '@/components/ui/Button/Button';
-import ProductCard from '@/components/business/product-card/ProductCard';
+import ProductCard from '@/components/business/ProductCard/ProductCard';
 
 const ExploreMarketplace = () => {
   return (
@@ -8,8 +8,8 @@ const ExploreMarketplace = () => {
       <div className="container">
         <h2>Explore Marketplace</h2>
         <div className="exploreMarketplace__filters">
-          <Button className="exploreMarketplace__filter">All</Button>
-          <Button className="exploreMarketplace__filter">
+          <Button className="button-tag exploreMarketplace__filter">All</Button>
+          <Button className="button-tag exploreMarketplace__filter">
             <svg
               width="26"
               height="26"
@@ -24,7 +24,7 @@ const ExploreMarketplace = () => {
             </svg>
             Category
           </Button>
-          <Button className="exploreMarketplace__filter">
+          <Button className="button-tag exploreMarketplace__filter">
             <svg
               width="26"
               height="26"
@@ -39,7 +39,7 @@ const ExploreMarketplace = () => {
             </svg>
             Collection
           </Button>
-          <Button className="button exploreMarketplace__filter">
+          <Button className="button-tag exploreMarketplace__filter">
             <svg
               width="27"
               height="26"
@@ -64,14 +64,14 @@ const ExploreMarketplace = () => {
           </Button>
         </div>
         <div className="exploreMarketplace__cards">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
+          <ProductCard big />
         </div>
         <a href="#a">
           Explore All

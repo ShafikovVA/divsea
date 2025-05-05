@@ -1,0 +1,184 @@
+@use "styles/media";
+@use "styles/variables";
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  background: #141416;
+  color: white;
+  border-radius: 30px;
+  padding: 31px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+
+  @include media.breakpoint-down('deskS') {
+    padding: 22px;
+    align-items: center;
+    border-radius: 20px;
+  }
+  @include media.breakpoint-down('mobM') {
+    flex-direction: column;
+    width: 315px;
+    max-width: 315px;
+    min-width: 315px;
+    overflow: visible;
+    padding: 21px 31px 82px 31px;
+    border-radius: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 50%;
+    padding: 13px 0 20px 35px;
+    gap: 30px;
+
+    @include media.breakpoint-down('deskS') {
+      padding: 10px 0 15px 24px;
+      gap: 20px;
+    }
+    @include media.breakpoint-down('mobM') {
+      max-width: 100%;
+      gap: 26px;
+      padding: 0;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 130%;
+    margin-bottom: 13px;
+
+    @include media.breakpoint-down('deskS') {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 130%;
+    }
+    @include media.breakpoint-down('mobM') {
+      font-weight: 600;
+      font-size: 22.3px;
+      line-height: 130%;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 20.27px;
+    line-height: 130%;
+    color: #D4D4D4;
+
+    @include media.breakpoint-down('deskS') {
+      font-weight: 500;
+      font-size: 14.41px;
+      line-height: 130%;
+    }
+    @include media.breakpoint-down('mobM') {
+      font-weight: 500;
+      font-size: 10.04px;
+      line-height: 130%;
+      text-align: center;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 30px;
+    @include media.breakpoint-down('deskS') {
+      gap: 20px;
+    }
+    @include media.breakpoint-down('mobM') {
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .button {
+      font-weight: 600;
+      font-size: 21.36px;
+      line-height: 130%;
+
+      @include media.breakpoint-down('deskS') {
+        font-weight: 600;
+        font-size: 15.2px;
+        line-height: 130%;
+        padding: 14px 18px;
+      }
+      @include media.breakpoint-down('mobM') {
+        font-weight: 600;
+        font-size: 10.58px;
+        line-height: 130%;
+        padding: 10px 12px;
+      }
+    }
+  }
+  &__imageContainer {
+    width: 369px;
+    height: 249px;
+    position: relative;
+    z-index: 1;
+
+
+    @include media.breakpoint-down('deskS') {
+      width: 262px;
+      height: 177px;
+    }
+    @include media.breakpoint-down('mobM') {
+      display: flex;
+      position: absolute;
+      bottom: -82px;
+      width: 252px;
+      height: 129px;
+    }
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      border-radius: 15px;
+
+      @include media.breakpoint-down('deskS') {
+        border-radius: 11.23px;
+      }
+
+      @include media.breakpoint-down('mobM') {
+        border-radius: 15px;
+      }
+    }
+  }
+  &__imageBlure {
+    position: absolute;
+    min-width: 390px;
+    height: 249px;
+    border-radius: 7.55px;
+    z-index: -1;
+    filter: blur(52.874610900878906px);
+    left: -12px;
+    top: 15px;
+
+    @include media.breakpoint-down('deskS') {
+      min-width: 277px;
+      height: 177px;
+      top: 10px;
+      left: -9px;
+      border-radius: 5.37px;
+      filter: blur(37.60349655151367px)
+    }
+    @include media.breakpoint-down('mobM') {
+      width: 266px;
+      height: 129px;
+      top: 8px;
+      left: -8px;
+      border-radius: 4.4px;
+      filter: blur(30.808229446411133px)
+    }
+  }
+
+}

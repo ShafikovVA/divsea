@@ -1,0 +1,19 @@
+@use "styles/media";
+
+.banner-block {
+  padding-bottom: 160px;
+
+  @include media.breakpoint-down('deskS') {
+    padding-bottom: 112px;
+  }
+  @include media.breakpoint-down('mobM') {
+    padding-bottom: 191px;
+  }
+
+  .container {
+    @include media.breakpoint-down('mobM') {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

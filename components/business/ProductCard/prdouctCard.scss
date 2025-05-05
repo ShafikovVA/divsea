@@ -120,4 +120,53 @@
     @include media.breakpoint-down('mobM') {
     }
   }
+
+  &.big {
+    @include media.breakpoint-down('mobM') {
+      width: 283px;
+      height: 405px;
+      padding: 14px 14px 20px 14px;
+    }
+
+    .product-card__picture {
+      @include media.breakpoint-down('mobM') {
+        width: 254px;
+        height: 254px;
+        margin-bottom: 19px;
+      }
+    }
+    .product-card__title {
+      @include media.breakpoint-down('mobM') {
+        font-size: 21.35px;
+        line-height: 29.89px;
+        letter-spacing: 0;
+        padding-bottom: 14.23px;
+      }
+    }
+    .product-card__price-text {
+      font-size: 14.23px;
+      line-height: 21.35px;
+      letter-spacing: 0.12px;
+    }
+    .product-card__price {
+      font-size: 16.6px;
+      line-height: 24.91px;
+      letter-spacing: 0;
+
+      img {
+        width: 21px;
+        height: 21px;
+      }
+    }
+    button {
+      @include media.breakpoint-down('mobM') {
+        width: 122px;
+        height: 52px;
+        border-radius: 11.86px;
+        font-size: 14.23px;
+        line-height: 21.35px;
+        letter-spacing: 0.12px;
+      }
+    }
+  }
 }

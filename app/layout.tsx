@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import Header from '@/components/ui/Header/Header';
 import StoreProvider from '@/app/StoreProvider';
 import { ReactNode } from 'react';
+import Footer from '@/components/ui/Footer/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,7 +32,7 @@ export default function RootLayout({
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <Header />
           <main>{children}</main>
-          <footer>Футер</footer>
+          <Footer />
         </body>
       </html>
     </StoreProvider>

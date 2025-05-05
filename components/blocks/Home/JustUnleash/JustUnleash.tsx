@@ -2,6 +2,7 @@ import './justUnleash.scss';
 import Button from '@/components/ui/Button/Button';
 import Image from 'next/image';
 import img from '@/assets/images/blocks/justUnleash/illustration-left.png';
+import React from 'react';
 
 const JustUnleash = () => {
   const textList = [
@@ -46,7 +47,7 @@ const JustUnleash = () => {
             })}
           </ul>
           <div className="justUnleash__buttons">
-            <Button className="button button-primary">
+            <Button className="button-primary">
               Explore More
               <svg
                 width="23"
@@ -73,9 +74,38 @@ const JustUnleash = () => {
             </Button>
           </div>
         </div>
-        <picture>
-          <Image src={img} alt="just unleash image" />
-        </picture>
+        <Image
+          src={img}
+          sizes={`(max-width: 768) 100vh`}
+          alt="just unleash image"
+        />
+        <div className="justUnleash__buttons mobile">
+          <Button className="button-primary">
+            Explore More
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.98047 11.0703H17.8973"
+                stroke="white"
+                strokeWidth="1.84503"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M11.4365 4.61328L17.8949 11.0717L11.4365 17.5301"
+                stroke="white"
+                strokeWidth="1.84503"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Button>
+        </div>
       </div>
     </section>
   );

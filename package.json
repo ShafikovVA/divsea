@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && open localhost:3000",
+    "dev": "open-cli http://localhost:3000 & next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,6 +17,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "gsap": "^3.12.7",
     "next": "15.1.6",
+    "open-cli": "^8.0.0",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

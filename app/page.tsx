@@ -3,6 +3,7 @@ import WeeklyTop from '@/components/blocks/Home/WeeklyTop/WeeklyTop';
 import TopCollection from '@/components/blocks/Home/TopCollection/TopCollection';
 import ExploreMarketplace from '@/components/blocks/Home/ExploreMarketplace/ExploreMarketplace';
 import JustUnleash from '@/components/blocks/Home/JustUnleash/JustUnleash';
+import BannerBlock from '@/components/blocks/Home/BannerBlock/BannerBlock';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TopCollection />
       <ExploreMarketplace />
       <JustUnleash />
+      <BannerBlock />
     </>
   );
 }

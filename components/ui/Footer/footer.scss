@@ -1,0 +1,92 @@
+@import '@/styles/variables';
+@import '@/styles/media';
+
+.footer {
+  background: #141416;
+  padding: 90px 0 80px 0;
+
+  @include breakpoint-down('tabM') {
+    padding: 65px 0 57px 0;
+  }
+
+  @include breakpoint-down('mobM') {
+    padding: 52px 0 36px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    @include breakpoint-down('tabM') {
+      width: 142px;
+      height: 100%;
+    }
+    @include breakpoint-down('mobM') {
+      width: 134px;
+      height: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__top {
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #818181;
+
+    @include breakpoint-down('tabM') {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 70px;
+
+    @include breakpoint-down('tabM') {
+      gap: 50px;
+    }
+
+    @include breakpoint-down('mobM') {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    li {
+      cursor: pointer;
+
+      &:hover {
+        a {
+          color: #FFFFFF;
+          transition: 0.3s $transition-type;
+        }
+      }
+    }
+    a {
+      @include breakpoint-down('tabM') {
+        font-size: 12px;
+        line-height: 18px;
+      }
+      @include breakpoint-down('mobM') {
+        text-transform: uppercase;
+        color: #B9B9B9;
+
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 57px;
+    color: #999999;
+
+    @include breakpoint-down('mobM') {
+      padding-top: 26px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

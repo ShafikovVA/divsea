@@ -4,9 +4,14 @@ import nft1 from '@/assets/images/blocks/hero/nft-1.png';
 import ethereum from '@/assets/icons/ethereum.svg';
 import Button from '@/components/ui/Button/Button';
 
-export const ProductCard = () => {
+interface IProductCardProps {
+  big?: boolean;
+}
+
+export const ProductCard = (props: IProductCardProps) => {
+  const { big } = props;
   return (
-    <div className="product-card">
+    <div className={`product-card ${big ? 'big' : ''}`}>
       <div className="product-card__picture">
         <Image src={nft1} alt="title" />
       </div>

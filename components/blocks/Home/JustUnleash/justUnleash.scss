@@ -2,24 +2,54 @@
 @use 'styles/variables';
 
 .justUnleash {
-  padding: 103px 0 180px 0;
-
+  padding: 100px 0 180px 0;
+  overflow: hidden;
   @include media.breakpoint-down('deskS') {
     padding: 73px 0 128px 0;
   }
   @include media.breakpoint-down('mobM') {
-    padding: 164px 0 121px 0;
+    padding: 163px 0 121px 0;
   }
 
   .container {
+    position: relative;
     border-top: thin solid #CBCBCB;
-    padding-top: 75px;
+    padding-top: 122px;
     display: flex;
     gap: 102px;
+
+    @include media.breakpoint-down('deskS') {
+      padding-top: 78px;
+    }
+    @include media.breakpoint-down('mobM') {
+      padding-top: 0;
+      border: none;
+      flex-direction: column;
+      gap: 66px;
+    }
   }
 
   &__text {
     width: 461px;
+    @include media.breakpoint-down('mobM') {
+      width: 100%;
+    }
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 54.4px;
+
+    @include media.breakpoint-down('deskS') {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 38.69px;
+      margin-bottom: 33px;
+    }
+    @include media.breakpoint-down('mobM') {
+      margin-bottom: 0;
+      text-align: center;
+    }
   }
   &__title {
     letter-spacing: -2px;
@@ -33,6 +63,27 @@
     flex-direction: column;
     gap: 12px;
     margin-bottom: 70px;
+
+    @include media.breakpoint-down('deskS') {
+      gap: 8px;
+      margin-bottom: 53px;
+    }
+    @include media.breakpoint-down('mobM') {
+      display: none;
+    }
+  }
+  &__buttons {
+    @include media.breakpoint-down('mobM') {
+      display: none;
+    }
+    
+    &.mobile {
+      display: none;
+      @include media.breakpoint-down('mobM') {
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
   &__listItem {
     display: flex;
@@ -41,9 +92,68 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
+
+    @include media.breakpoint-down('deskS') {
+      font-weight: 400;
+      font-size: 11.38px;
+      line-height: 22.76px;
+      gap: 9px;
+    }
+
+    svg {
+      @include media.breakpoint-down('deskS') {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
   button {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
+    @include media.breakpoint-down('deskS') {
+      font-weight: 500;
+      font-size: 10.5px;
+      line-height: 13.12px;
+      text-align: center;
+      padding: 12px 14px;
+      gap: 8px;
+    }
+    @include media.breakpoint-down('mobM') {
+      font-weight: 500;
+      font-size: 11.07px;
+      line-height: 14px;
+      padding: 13px 15px;
+    }
+
+    svg {
+      width: 15px;
+      height: 15px;
+      gap: 8px;
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 822px;
+    height: fit-content;
+    right: -99px;
+    top: 69px;
+
+    @include media.breakpoint-down('deskS') {
+      width: 595px;
+      right: -78px;
+      top: 41px;
+    }
+    @include media.breakpoint-down('mobM') {
+      height: 293px;
+      width: fit-content;
+      right: 0;
+      left: 15px;
+      margin: auto;
+      top: 123px;
+      position: static;
+    }
   }
 }

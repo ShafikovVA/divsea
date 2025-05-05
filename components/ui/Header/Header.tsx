@@ -6,48 +6,66 @@ import logo2 from '@/assets/icons/logo2.svg';
 import burger from '@/assets/icons/burger.svg';
 import Search from '@/components/ui/Search/Search';
 import Button from '@/components/ui/Button/Button';
-import { useAppSelector } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { useAdaptive } from '@/lib/hooks/useAdaptive';
+import HeaderMenu from '@/components/ui/HeaderMenu/HeaderMenu';
+import {
+  isMobileMenuOpenSelector,
+  setIsMobileMenuOpen,
+} from '@/store/reducers/mobileMenuReducer';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const dispatch = useAppDispatch();
   const adaptive = useAppSelector((state) => state.adaptive);
+  const isMenuOpen = useSelector(isMobileMenuOpenSelector);
+
+  const handleClickOpen = () => {
+    dispatch(setIsMobileMenuOpen(true));
+  };
+
   useAdaptive();
-  console.log(adaptive);
+
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__content">
-          <div className="header__left">
-            <div className="header__logo">
-              <Image src={adaptive.isTable ? logo2 : logo} alt="logo" />
+    <>
+      <header className="header">
+        <div className="container">
+          <div className="header__content">
+            <div className="header__left">
+              <div className="header__logo">
+                <Image src={adaptive.isTable ? logo2 : logo} alt="logo" />
+              </div>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#a">Discover</a>
+                  </li>
+                  <li>
+                    <a href="#a">creators</a>
+                  </li>
+                  <li>
+                    <a href="#a">Sell</a>
+                  </li>
+                  <li>
+                    <a href="#a">stats</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-            <nav>
-              <ul>
-                <li>
-                  <a href="#a">Discover</a>
-                </li>
-                <li>
-                  <a href="#a">creators</a>
-                </li>
-                <li>
-                  <a href="#a">Sell</a>
-                </li>
-                <li>
-                  <a href="#a">stats</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div className="header__right">
-            <Search />
-            <Button className="button-primary uppercase">Connect Wallet</Button>
-            <Button className="burger">
-              <Image src={burger} alt="burger" />
-            </Button>
+            <div className="header__right">
+              <Search />
+              <Button className="button-primary uppercase">
+                Connect Wallet
+              </Button>
+              <Button onClick={handleClickOpen} className="burger">
+                <Image src={burger} alt="burger" />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {isMenuOpen.open && <HeaderMenu />}
+    </>
   );
 };
 export default Header;

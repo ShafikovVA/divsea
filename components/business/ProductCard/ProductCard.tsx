@@ -3,25 +3,32 @@ import Image from 'next/image';
 import nft1 from '@/assets/images/blocks/hero/nft-1.png';
 import ethereum from '@/assets/icons/ethereum.svg';
 import Button from '@/components/ui/Button/Button';
+import { IProductCard } from '@/app/type/product/IProductCard';
 
-interface IProductCardProps {
+interface IProductCardProps extends IProductCard {
   big?: boolean;
 }
 
 export const ProductCard = (props: IProductCardProps) => {
-  const { big } = props;
+  const { big, title, price, image } = props;
   return (
     <div className={`product-card ${big ? 'big' : ''}`}>
       <div className="product-card__picture">
-        <Image src={nft1} alt="title" />
+        <Image 
+          src={image} 
+          alt="title" 
+          fill
+          sizes="(max-width: 768px) 179.86px, 252.9px"
+          style={{ objectFit: 'cover' }}
+        />
       </div>
-      <div className="product-card__title">Sun-Glass</div>
+      <div className="product-card__title">{title}</div>
       <div className="product-card__controls">
         <div className="product-card__price-text">
           <span>Current bid:</span>
           <span className="product-card__price">
             <Image src={ethereum} alt="ethereum" />
-            1.75
+            {price}
           </span>
         </div>
         <Button className="button-primary">PLACE BID</Button>

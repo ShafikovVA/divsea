@@ -1,0 +1,34 @@
+.catalog {
+  padding-top: 155px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 45px;
+    line-height: 30px;
+    padding-bottom: 45px;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 100px;
+  }
+
+  &__cardList {
+    margin-bottom: 200px;
+    &-cards {
+      display: flex;
+      gap: 48px 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 100px;
+    }
+  }
+
+}

@@ -14,6 +14,7 @@ import {
   setIsMobileMenuOpen,
 } from '@/store/reducers/mobileMenuReducer';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -38,7 +39,7 @@ const Header = () => {
               <nav>
                 <ul>
                   <li>
-                    <a href="#a">Discover</a>
+                    <Link href={'/catalog'}>Discover</Link>
                   </li>
                   <li>
                     <a href="#a">creators</a>

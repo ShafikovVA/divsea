@@ -24,6 +24,7 @@
     height: 252.9px;
     margin-bottom: 19px;
     border-radius: 23.48px;
+    overflow: hidden;
 
     @include media.breakpoint-down('deskS') {
       width: 179.86px;

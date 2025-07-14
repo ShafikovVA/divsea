@@ -1,25 +1,25 @@
 'use server';
 
-import { INftCard } from "./type/nfts/INftCard";
+import { INftCard } from './type/nfts/INftCard';
 
 export const getNfts = async (): Promise<INftCard[]> => {
-    try {
-        const response = await fetch('http://localhost:3001/cards?_limit=15');
-        const data: INftCard[] = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return [] as INftCard[];
-    }
-}
+  try {
+    const response = await fetch('http://localhost:3001/cards?_limit=15');
+    const data: INftCard[] = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [] as INftCard[];
+  }
+};
 
 export const getExploreMarketplace = async (): Promise<INftCard[]> => {
-    try {
-        const response = await fetch('http://localhost:3001/cards?_limit=8');
-        const data: INftCard[] = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return [] as INftCard[];
-    }
-}
+  try {
+    const response = await fetch('http://localhost:3001/cards?_limit=8');
+    const data: INftCard[] = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [] as INftCard[];
+  }
+};

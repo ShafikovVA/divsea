@@ -11,7 +11,7 @@ interface IPaginationProps {
 
 const Pagination = ({ pages, currentPage, setCurrentPage }: IPaginationProps) => {
     const isManyPages = pages > 10;
-    let pagesArray = Array.from({ length: pages }, (_, i) => i + 1);
+    const pagesArray = Array.from({ length: pages }, (_, i) => i + 1);
     
     
     const handlePrevPage = () => {

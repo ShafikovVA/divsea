@@ -6,7 +6,6 @@ import 'swiper/css/navigation';
 import ProductCard from '@/components/business/ProductCard/ProductCard';
 import { Navigation } from 'swiper/modules';
 import SliderButtons from '@/components/ui/SliderButtons/SliderButtons';
-import { useAppSelector } from '@/store/hooks';
 import { INftCard } from '@/app/type/nfts/INftCard';
 
 interface IWeeklyTopProps {
@@ -14,7 +13,6 @@ interface IWeeklyTopProps {
 }
 
 const WeeklyTop = ({ nfts }: IWeeklyTopProps) => {
-  console.log(nfts);
   const swiperBreakpointsConfig = {
     0: {
       spaceBetween: 28.13,

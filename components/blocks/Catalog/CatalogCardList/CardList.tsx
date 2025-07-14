@@ -1,5 +1,4 @@
 'use client'
-import { INftCard } from "@/app/type/nfts/INftCard";
 import { INfts } from "@/app/type/nfts/INfts";
 import ProductCard from "@/components/business/ProductCard/ProductCard";
 import ProductCardSkeleton from "@/components/business/ProductCard/ProductCard.skeleton";

@@ -1,6 +1,5 @@
 import './prdouctCard.scss';
 import Image from 'next/image';
-import nft1 from '@/assets/images/blocks/hero/nft-1.png';
 import ethereum from '@/assets/icons/ethereum.svg?url';
 import Button from '@/components/ui/Button/Button';
 import { INftCard } from '@/app/type/nfts/INftCard';

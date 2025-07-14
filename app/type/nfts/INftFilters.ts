@@ -1,3 +1,3 @@
 export interface INftsFilters {
-    [key: string]: string;
+  [key: string]: string;
 }

@@ -1,16 +1,13 @@
 "use client";
 import './button-input.scss';
-import { useLayoutEffect, useRef, useState, RefObject, useEffect, useCallback, useMemo } from "react";
-import Button from "../../Button/Button";
-import Input, { IInputProps } from "../Input/Input";
+import { useState } from 'react';
+import Input, { IInputProps } from '../Input/Input';
 
-interface IButtonInputProps extends IInputProps {};
 
-const ButtonInput = (props: IButtonInputProps) => {
-    const { placeholder, className, onChange } = props;
+const ButtonInput = (props: IInputProps) => {
+    const { placeholder, className, onChange } = props; 
     const [inputValue, setInputValue] = useState<string | undefined>(undefined);
     const [isAnimationUp, setIsAnimationUp] = useState(false);
-    
     const InputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
         animatePlaceholder(e.target.value);

@@ -18,11 +18,10 @@ const CardFilters = () => {
     ).current;
 
     const onFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let newFilters = {...filters};
+        const newFilters = {...filters};
         if(filters[e.target.name] && e.target.value === '') {
             newFilters[e.target.name] = e.target.value;  
             delete filters[e.target.name];
-            console.log(filters);
             setFilters({...filters});
         } else {
             newFilters[e.target.name] = e.target.value;  

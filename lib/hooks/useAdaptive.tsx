@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect } from 'react';
 import { useAppDispatch } from '@/store/hooks';
-import { setIsMobile, setIsTable } from '@/store/reducers/adaptiveReducer';
+import { setIsMobile, setIsTable } from '@/store/reducers/ui/adaptiveReducer';
 
 export const useAdaptive = () => {
   const dispatch = useAppDispatch();

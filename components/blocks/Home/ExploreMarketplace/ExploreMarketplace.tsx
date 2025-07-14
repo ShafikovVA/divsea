@@ -1,8 +1,13 @@
 import './exploreMarketplace.scss';
 import Button from '@/components/ui/Button/Button';
 import ProductCard from '@/components/business/ProductCard/ProductCard';
+import { INftCard } from '@/app/type/nfts/INftCard';
 
-const ExploreMarketplace = () => {
+interface IExploreMarketplaceProps {
+  nfts: INftCard[];
+}
+
+const ExploreMarketplace = ({ nfts }: IExploreMarketplaceProps) => {
   return (
     <section className="exploreMarketplace">
       <div className="container">
@@ -64,14 +69,11 @@ const ExploreMarketplace = () => {
           </Button>
         </div>
         <div className="exploreMarketplace__cards">
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
-          <ProductCard big />
+          {
+            nfts.map((nft) => (
+              <ProductCard key={nft.id} {...nft} big />
+            ))
+          }
         </div>
         <a href="#a">
           Explore All

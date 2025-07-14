@@ -6,8 +6,15 @@ import 'swiper/css/navigation';
 import ProductCard from '@/components/business/ProductCard/ProductCard';
 import { Navigation } from 'swiper/modules';
 import SliderButtons from '@/components/ui/SliderButtons/SliderButtons';
+import { useAppSelector } from '@/store/hooks';
+import { INftCard } from '@/app/type/nfts/INftCard';
 
-const WeeklyTop = () => {
+interface IWeeklyTopProps {
+  nfts: INftCard[];
+}
+
+const WeeklyTop = ({ nfts }: IWeeklyTopProps) => {
+  console.log(nfts);
   const swiperBreakpointsConfig = {
     0: {
       spaceBetween: 28.13,
@@ -35,27 +42,11 @@ const WeeklyTop = () => {
           prevEl: '.weekly-top__prev',
         }}
       >
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
+        {nfts.map((nft) => (
+          <SwiperSlide key={nft.id}>
+            <ProductCard {...nft} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <SliderButtons
         cssMode={true}

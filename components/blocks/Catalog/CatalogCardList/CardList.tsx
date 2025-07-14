@@ -1,22 +1,39 @@
 'use client'
-import { getCards } from "@/app/(catalog)/catalog/page.server";
-import { IProductCard } from "@/app/type/product/IProductCard";
+import { INftCard } from "@/app/type/nfts/INftCard";
+import { INfts } from "@/app/type/nfts/INfts";
 import ProductCard from "@/components/business/ProductCard/ProductCard";
+import ProductCardSkeleton from "@/components/business/ProductCard/ProductCard.skeleton";
 import Pagination from "@/components/ui/Pagination/Pagination";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { getNfts, setNfts } from "@/store/reducers/business/nftsReducer";
+import { useEffect, useState } from "react";
 
 interface ICardListProps {
-    cards: IProductCard[];
-    pages: number;
+    inititalData: INfts;
 }
 
-export const CardList = ({ cards, pages }: ICardListProps) => {
+export const CardList = ({ inititalData }: ICardListProps) => {
+    const dispatch = useAppDispatch();
     const [currentPage, setCurrentPage] = useState(1);
-    const [cardItems, setCardItems] = useState(cards);
+    const storedCardItems = useAppSelector(state => state.nfts);
+    
+    const { data: cardItems, pages, pending } = storedCardItems;
+    
+    const Skeletons = () => (
+        <div className="catalog__cardList-cards">
+            {Array.from({ length: 8 }, (_, index) => (
+                <ProductCardSkeleton key={index} />
+            ))}
+        </div>
+    );
+    
+    useEffect(() => {
+        dispatch(setNfts(inititalData));
+    }, [inititalData]);
 
     const onPageChange = async (page: number) => {
-        const {data: cards} = await getCards(page);
-        setCardItems(cards);
+        dispatch(getNfts({page: page}));
+        
         setCurrentPage(page);
         window.scrollTo(0, 0);
     }
@@ -24,13 +41,16 @@ export const CardList = ({ cards, pages }: ICardListProps) => {
         <>
             <div className="catalog__cardList">
                 <div className="catalog__cardList-cards">
+                    {pending && cardItems.length === 0 && Skeletons()}
                     {cardItems.map((card) => (
                         <ProductCard key={card.id} {...card} />
                     ))}
                 </div>
+                
                 {pages > 1 && (
                     <Pagination pages={ pages } currentPage={currentPage} setCurrentPage={onPageChange} />
                 )}
+               
             </div>
         </>
     )

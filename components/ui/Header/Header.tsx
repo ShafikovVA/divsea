@@ -12,7 +12,7 @@ import HeaderMenu from '@/components/ui/HeaderMenu/HeaderMenu';
 import {
   isMobileMenuOpenSelector,
   setIsMobileMenuOpen,
-} from '@/store/reducers/mobileMenuReducer';
+} from '@/store/reducers/ui/mobileMenuReducer';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
 

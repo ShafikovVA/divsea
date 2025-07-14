@@ -3,13 +3,13 @@ import Image from 'next/image';
 import nft1 from '@/assets/images/blocks/hero/nft-1.png';
 import ethereum from '@/assets/icons/ethereum.svg?url';
 import Button from '@/components/ui/Button/Button';
-import { IProductCard } from '@/app/type/product/IProductCard';
+import { INftCard } from '@/app/type/nfts/INftCard';
 
-interface IProductCardProps extends IProductCard {
+interface INftCardProps extends INftCard {
   big?: boolean;
 }
 
-export const ProductCard = (props: IProductCardProps) => {
+export const ProductCard = (props: INftCardProps) => {
   const { big, title, price, image } = props;
   return (
     <div className={`product-card ${big ? 'big' : ''}`}>

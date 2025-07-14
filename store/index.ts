@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { adaptiveSlice } from '@/store/reducers/adaptiveReducer';
-import { mobileMenuSlice } from '@/store/reducers/mobileMenuReducer';
+import { adaptiveSlice } from '@/store/reducers/ui/adaptiveReducer';
+import { mobileMenuSlice } from '@/store/reducers/ui/mobileMenuReducer';
+import { nftsSlice } from './reducers/business/nftsReducer';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       adaptive: adaptiveSlice.reducer,
       mobileMenu: mobileMenuSlice.reducer,
+      nfts: nftsSlice.reducer,
     },
   });
 };

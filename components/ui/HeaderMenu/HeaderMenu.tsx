@@ -5,7 +5,7 @@ import cross from '@/assets/icons/cross.svg?url';
 import Button from '@/components/ui/Button/Button';
 import Search from '@/components/ui/Search/Search';
 import { useAppDispatch } from '@/store/hooks';
-import { setIsMobileMenuOpen } from '@/store/reducers/mobileMenuReducer';
+import { setIsMobileMenuOpen } from '@/store/reducers/ui/mobileMenuReducer';
 
 const HeaderMenu = () => {
   const dispatch = useAppDispatch();

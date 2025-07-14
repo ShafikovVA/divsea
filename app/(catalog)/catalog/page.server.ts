@@ -1,24 +1,16 @@
-import { IProductCard } from "@/app/type/product/IProductCard"
+'use server'
+import { INfts } from "@/app/type/nfts/INfts";
 
-export interface IGetCardsResponse {
-    first: number,
-    prev: number,
-    next: number,
-    last: number,
-    pages: number,
-    items: number,
-    data: IProductCard[];
-}
-export const getCards = async (page: number = 1): Promise<IGetCardsResponse> => {
-    console.log(page);
+export const getCards = async (page: number = 1): Promise<INfts> => {
     try {
         const res = await fetch(`http://localhost:3001/cards?_page=${page}`, {
             method: 'GET',
         });
-        const data = await res.json();
-        return data;
+        const data: INfts = await res.json();
+        return data as INfts;
     } catch (error) {
         console.error(error);
+
         return {
             first: 0,
             prev: 0,
@@ -27,6 +19,6 @@ export const getCards = async (page: number = 1): Promise<IGetCardsResponse> => 
             pages: 0,
             items: 0,
             data: [],
-        }
+        } as INfts;
     }
 }

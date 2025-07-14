@@ -1,6 +1,6 @@
 import './topCollection.scss';
 import nft1 from '@/assets/images/blocks/hero/nft-1.png';
-import ethereum from '@/assets/icons/ethereum.svg';
+import ethereum from '@/assets/icons/ethereum.svg?url';
 import Image from 'next/image';
 
 const TopCollection = () => {

@@ -1,9 +1,9 @@
 'use client';
 import './header.scss';
 import Image from 'next/image';
-import logo from '@/assets/icons/logo.svg';
-import logo2 from '@/assets/icons/logo2.svg';
-import burger from '@/assets/icons/burger.svg';
+import logo from '@/assets/icons/logo.svg?url';
+import logo2 from '@/assets/icons/logo2.svg?url';
+import burger from '@/assets/icons/burger.svg?url';
 import Search from '@/components/ui/Search/Search';
 import Button from '@/components/ui/Button/Button';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';

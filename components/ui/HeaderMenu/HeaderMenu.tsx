@@ -1,7 +1,7 @@
 import './headerMenu.scss';
 import Image from 'next/image';
-import logo from '@/assets/icons/logo.svg';
-import cross from '@/assets/icons/cross.svg';
+import logo from '@/assets/icons/logo.svg?url';
+import cross from '@/assets/icons/cross.svg?url';
 import Button from '@/components/ui/Button/Button';
 import Search from '@/components/ui/Search/Search';
 import { useAppDispatch } from '@/store/hooks';

@@ -8,7 +8,7 @@ import { IProductCard } from '@/app/type/product/IProductCard';
 import { CardList } from '@/components/blocks/Catalog/CatalogCardList/CardList';
 
 export default async function Catalog() {
-  const cards: IProductCard[] = await getCards();
+  const {data: cards, pages} = await getCards();
 
   return (
     <section className={'catalog'}>
@@ -19,7 +19,7 @@ export default async function Catalog() {
           <Button className={'button-outline'}>Collection</Button>
           <Button className={'button-outline'}>Price</Button>
         </div>
-        <CardList cards={cards} />
+        <CardList cards={cards} pages={pages} />
       </div>
     </section>
   );

@@ -8,9 +8,9 @@ import nft2 from '@/assets/images/blocks/hero/nft-2.png';
 import nft3 from '@/assets/images/blocks/hero/nft-3.png';
 import nft4 from '@/assets/images/blocks/hero/nft-4.png';
 import pattern from '@/assets/images/blocks/hero/pattern.png';
-import arrow from '@/assets/images/blocks/hero/arrow.svg';
-import trustpilots from '@/assets/icons/trustpilots.svg';
-import star from '@/assets/icons/start.svg';
+import arrow from '@/assets/images/blocks/hero/arrow.svg?url';
+import trustpilots from '@/assets/icons/trustpilots.svg?url';
+import star from '@/assets/icons/start.svg?url';
 
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';

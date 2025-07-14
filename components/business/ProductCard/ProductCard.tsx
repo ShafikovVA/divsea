@@ -1,7 +1,7 @@
 import './prdouctCard.scss';
 import Image from 'next/image';
 import nft1 from '@/assets/images/blocks/hero/nft-1.png';
-import ethereum from '@/assets/icons/ethereum.svg';
+import ethereum from '@/assets/icons/ethereum.svg?url';
 import Button from '@/components/ui/Button/Button';
 import { IProductCard } from '@/app/type/product/IProductCard';
 
@@ -16,7 +16,7 @@ export const ProductCard = (props: IProductCardProps) => {
       <div className="product-card__picture">
         <Image 
           src={image} 
-          alt="title" 
+          alt={`${title} image`} 
           fill
           sizes="(max-width: 768px) 179.86px, 252.9px"
           style={{ objectFit: 'cover' }}

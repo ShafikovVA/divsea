@@ -69,11 +69,9 @@ const ExploreMarketplace = ({ nfts }: IExploreMarketplaceProps) => {
           </Button>
         </div>
         <div className="exploreMarketplace__cards">
-          {
-            nfts.map((nft) => (
-              <ProductCard key={nft.id} {...nft} big />
-            ))
-          }
+          {nfts.map((nft) => (
+            <ProductCard key={nft.id} {...nft} big />
+          ))}
         </div>
         <a href="#a">
           Explore All

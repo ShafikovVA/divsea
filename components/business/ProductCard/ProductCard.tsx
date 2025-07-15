@@ -13,9 +13,9 @@ export const ProductCard = (props: INftCardProps) => {
   return (
     <div className={`product-card ${big ? 'big' : ''}`}>
       <div className="product-card__picture">
-        <Image 
-          src={image} 
-          alt={`${title} image`} 
+        <Image
+          src={image}
+          alt={`${title} image`}
           fill
           sizes="(max-width: 768px) 179.86px, 252.9px"
           style={{ objectFit: 'cover' }}

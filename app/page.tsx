@@ -4,7 +4,7 @@ import TopCollection from '@/components/blocks/Home/TopCollection/TopCollection'
 import ExploreMarketplace from '@/components/blocks/Home/ExploreMarketplace/ExploreMarketplace';
 import JustUnleash from '@/components/blocks/Home/JustUnleash/JustUnleash';
 import BannerBlock from '@/components/blocks/Home/BannerBlock/BannerBlock';
-import {getNfts, getExploreMarketplace} from './page.server';
+import { getNfts, getExploreMarketplace } from './page.server';
 
 export default async function Home() {
   const nfts = await getNfts();

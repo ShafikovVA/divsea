@@ -1,0 +1,95 @@
+@import '/styles/variables.scss';
+@import '/styles/media.scss';
+
+.user-bid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: $white;
+  border-radius: 11px;
+  box-shadow: -5.85px 11.7px 20.26px 0px #10101026;
+  padding: 18px 50px 18px 18px;
+
+  @include deskS {
+    padding: 13px 46px 13px 12px;
+  }
+  @include tabM {
+    padding: 12px 35px 12px 12px;
+  }
+
+  &__image {
+    min-width: 64px;
+    min-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $grey;
+    
+    @include deskS {
+      min-width: 45px;
+      min-height: 45px;
+      max-width: 45px;
+      max-height: 45px;
+    }
+    @include tabM {
+      min-width: 45px;
+      min-height: 45px;
+      max-width: 45px;
+      max-height: 45px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0 7px 0;
+    
+    @include deskS {
+      padding: 10px 0 5px 0;
+    }
+    
+    &-text {
+      display: flex;
+      flex-direction: column;
+    }
+    &-name {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 25px;
+      color: $black;
+      margin-bottom: -2px;
+      
+      @include deskS {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+    &-date {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $grey;
+      @include deskS {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+    &-price {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 25px;
+      color: $black;
+      @include deskS {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}

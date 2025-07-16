@@ -1,4 +1,4 @@
-@use "styles/media";
+@use "/styles/media";
 
 .product-card {
   display: flex;
@@ -9,12 +9,12 @@
   box-shadow: 38.82px 11.76px 58.81px 0 #C7C7C799;
   width: 281.13px;
 
-  @include media.breakpoint-down('deskS') {
+  @include media.deskS {
     padding: 10px;
     width: 199.93px;
     border-radius: 16.7px;
   }
-  @include media.breakpoint-down('mobM') {
+  @include media.mobM {
     width: 198.49px;
   }
 
@@ -26,7 +26,7 @@
     border-radius: 23.48px;
     overflow: hidden;
 
-    @include media.breakpoint-down('deskS') {
+    @include media.deskS {
       width: 179.86px;
       height: 179.86px;
       margin-bottom: 14px;
@@ -46,7 +46,7 @@
     letter-spacing: 0;
     padding-bottom: 14px;
 
-    @include media.breakpoint-down('deskS') {
+    @include media.deskS {
       font-size: 15.06px;
       line-height: 21.08px;
       padding-bottom: 10.04px;
@@ -68,7 +68,7 @@
     line-height: 24.7px;
     letter-spacing: 0;
 
-    @include media.breakpoint-down('deskS') {
+    @include media.deskS {
       font-size: 11.63px;
       line-height: 17.44px;
     }
@@ -84,7 +84,7 @@
       letter-spacing: 0.12px;
 
 
-      @include media.breakpoint-down('deskS') {
+      @include media.deskS {
         font-size: 10.04px;
         line-height: 15.06px;
         letter-spacing: 0.08px;
@@ -92,7 +92,7 @@
       }
     }
     img {
-      @include media.breakpoint-down('deskS') {
+      @include media.deskS {
         width: 14.949402809143066px;
         height: 14.949402809143066px;
 
@@ -108,7 +108,7 @@
     align-items: center;
     justify-content: center;
     
-    @include media.breakpoint-down('deskS') {
+    @include media.deskS {
       font-family: "Poppins", sans-serif;
       font-weight: 700;
       font-size: 9.97px;
@@ -119,26 +119,26 @@
       padding: 10px;
       border-radius: 8.37px;
     }
-    @include media.breakpoint-down('mobM') {
+    @include media.mobM {
     }
   }
 
   &.big {
-    @include media.breakpoint-down('mobM') {
+    @include media.mobM {
       width: 283px;
       height: 405px;
       padding: 14px 14px 20px 14px;
     }
 
     .product-card__picture {
-      @include media.breakpoint-down('mobM') {
+      @include media.mobM {
         width: 254px;
         height: 254px;
         margin-bottom: 19px;
       }
     }
     .product-card__title {
-      @include media.breakpoint-down('mobM') {
+      @include media.mobM {
         font-size: 21.35px;
         line-height: 29.89px;
         letter-spacing: 0;
@@ -161,7 +161,7 @@
       }
     }
     button {
-      @include media.breakpoint-down('mobM') {
+      @include media.mobM {
         width: 122px;
         height: 52px;
         border-radius: 11.86px;

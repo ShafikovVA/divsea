@@ -3,10 +3,10 @@ import './weeklyTop.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import ProductCard from '@/components/business/ProductCard/ProductCard';
+import ProductCard from '@/components/business/NftCard/NftCard';
 import { Navigation } from 'swiper/modules';
 import SliderButtons from '@/components/ui/SliderButtons/SliderButtons';
-import { INftCard } from '@/app/type/nfts/INftCard';
+import { INftCard } from '@/types/nfts/INftCard';
 
 interface IWeeklyTopProps {
   nfts: INftCard[];

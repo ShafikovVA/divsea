@@ -1,7 +1,7 @@
 import './exploreMarketplace.scss';
 import Button from '@/components/ui/Button/Button';
-import ProductCard from '@/components/business/ProductCard/ProductCard';
-import { INftCard } from '@/app/type/nfts/INftCard';
+import ProductCard from '@/components/business/NftCard/NftCard';
+import { INftCard } from '@/types/nfts/INftCard';
 
 interface IExploreMarketplaceProps {
   nfts: INftCard[];

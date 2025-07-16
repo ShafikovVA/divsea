@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { adaptiveSlice } from '@/store/reducers/ui/adaptiveReducer';
-import { mobileMenuSlice } from '@/store/reducers/ui/mobileMenuReducer';
-import { nftsSlice } from './reducers/business/nftsReducer';
+import adaptiveReducer from '@/store/reducers/ui/adaptiveReducer';
+import mobileMenuReducer from '@/store/reducers/ui/mobileMenuReducer';
+import nftsReducer from './reducers/business/nftsReducer';
+import modalReducer from './reducers/ui/modalsReduser';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      adaptive: adaptiveSlice.reducer,
-      mobileMenu: mobileMenuSlice.reducer,
-      nfts: nftsSlice.reducer,
+      adaptive: adaptiveReducer,
+      mobileMenu: mobileMenuReducer,
+      nfts: nftsReducer,
+      modal: modalReducer,
     },
   });
 };

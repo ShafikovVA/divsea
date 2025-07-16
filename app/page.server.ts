@@ -1,6 +1,6 @@
 'use server';
 
-import { INftCard } from './type/nfts/INftCard';
+import { INftCard } from '@/types/nfts/INftCard';
 
 export const getNfts = async (): Promise<INftCard[]> => {
   try {

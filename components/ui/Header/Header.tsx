@@ -7,7 +7,7 @@ import burger from '@/assets/icons/burger.svg?url';
 import Search from '@/components/ui/Search/Search';
 import Button from '@/components/ui/Button/Button';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { useAdaptive } from '@/lib/hooks/useAdaptive';
+import { useAdaptive } from '@/lib/hooks/ui/useAdaptive';
 import HeaderMenu from '@/components/ui/HeaderMenu/HeaderMenu';
 import {
   isMobileMenuOpenSelector,

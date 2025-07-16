@@ -18,3 +18,19 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin deskS {
+  @include breakpoint-down('deskS') {
+    @content;
+  }
+}
+@mixin tabM {
+  @include breakpoint-down('tabM') {
+    @content;
+  }
+}
+@mixin mobM {
+  @include breakpoint-down('mobM') {
+    @content;
+  }
+}

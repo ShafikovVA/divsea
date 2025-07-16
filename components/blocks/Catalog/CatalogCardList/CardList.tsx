@@ -1,7 +1,7 @@
 'use client';
-import { INfts } from '@/app/type/nfts/INfts';
-import ProductCard from '@/components/business/ProductCard/ProductCard';
-import ProductCardSkeleton from '@/components/business/ProductCard/ProductCard.skeleton';
+import { INfts } from '@/types/nfts/INfts';
+import ProductCard from '@/components/business/NftCard/NftCard';
+import ProductCardSkeleton from '@/components/business/NftCard/NftCard.skeleton';
 import Pagination from '@/components/ui/Pagination/Pagination';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { getNfts, setNfts } from '@/store/reducers/business/nftsReducer';

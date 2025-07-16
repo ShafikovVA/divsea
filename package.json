@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
@@ -24,12 +26,21 @@
     "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "4.0.1",
     "@eslint/eslintrc": "^3.3.1",
     "@next/eslint-plugin-next": "^15.3.5",
+    "@storybook/addon-a11y": "9.0.17",
+    "@storybook/addon-docs": "9.0.17",
+    "@storybook/addon-onboarding": "9.0.17",
+    "@storybook/addon-vitest": "9.0.17",
+    "@storybook/nextjs-vite": "^9.0.17",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^24.0.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "classnames": "^2.5.1",
     "eslint": "^9.31.0",
     "eslint-config-next": "15.3.5",
     "eslint-config-prettier": "^10.1.5",
@@ -37,8 +48,12 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-storybook": "9.0.17",
     "json-server": "^1.0.0-beta.3",
+    "playwright": "^1.54.1",
+    "storybook": "9.0.17",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.37.0"
+    "typescript-eslint": "^8.37.0",
+    "vitest": "^3.2.4"
   }
 }

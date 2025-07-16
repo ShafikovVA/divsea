@@ -1,14 +1,14 @@
-import './prdouctCard.scss';
+import './nft-card.scss';
 import Image from 'next/image';
 import ethereum from '@/assets/icons/ethereum.svg?url';
 import Button from '@/components/ui/Button/Button';
-import { INftCard } from '@/app/type/nfts/INftCard';
+import { INftCard } from '@/types/nfts/INftCard';
 
 interface INftCardProps extends INftCard {
   big?: boolean;
 }
 
-export const ProductCard = (props: INftCardProps) => {
+export const NftCard = (props: INftCardProps) => {
   const { big, title, price, image } = props;
   return (
     <div className={`product-card ${big ? 'big' : ''}`}>
@@ -36,4 +36,4 @@ export const ProductCard = (props: INftCardProps) => {
   );
 };
 
-export default ProductCard;
+export default NftCard;

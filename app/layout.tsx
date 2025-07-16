@@ -5,6 +5,7 @@ import Header from '@/components/ui/Header/Header';
 import StoreProvider from '@/app/StoreProvider';
 import { ReactNode } from 'react';
 import Footer from '@/components/ui/Footer/Footer';
+import ModalManager from '@/components/ui/ModalManager/ModalManager';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <ModalManager />
         </body>
       </html>
     </StoreProvider>

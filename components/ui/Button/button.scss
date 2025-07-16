@@ -17,7 +17,7 @@
     line-height: 24.41px;
     letter-spacing: 0.01em;
 
-    @include media.breakpoint-down('deskS'){
+    @include media.deskS {
       font-size: 11.57px;
       font-weight: 500;
       line-height: 17.36px;
@@ -25,13 +25,13 @@
       padding: 12px 20px;
       border-radius: 8.89px;
     }
-    @include media.breakpoint-down('tabM'){
+    @include media.tabM {
       font-size: 11.66px;
       font-weight: 500;
       line-height: 17.49px;
       letter-spacing: 0.01em;
     }
-    @include media.breakpoint-down('mobM') {
+    @include media.mobM {
 
       padding: 14px 17px;
     }
@@ -98,7 +98,7 @@
     display: none;
     padding: 0;
 
-    @include media.breakpoint-down('tabM'){
+    @include media.tabM{
       display: flex;
     }
     img {
@@ -121,10 +121,10 @@
     border-color: #1A202C;
     padding: 16.5px;
     border-radius: 13.26px;
-    @include media.breakpoint-down('deskS'){
+    @include media.deskS {
       padding: 11.5px;
     }
-    @include media.breakpoint-down('mobM') {
+    @include media.mobM {
       padding: 10px;
       border-radius: 8.5px;
     }

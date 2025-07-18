@@ -1,6 +1,6 @@
 import './users-bid-list.scss';
 import UserBid from '@/components/business/UserBid/UserBid';
-import { IUserBid } from '@/types/nfts/IHistoryOfBid';
+import { IUserBid } from '@/types/nfts/IUserBid';
 
 interface IUsersBidList {
   usersBidList: IUserBid[];

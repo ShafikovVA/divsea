@@ -1,4 +1,4 @@
-import { IUserBid } from '../nfts/IHistoryOfBid';
+import { IUserBid } from '../nfts/IUserBid';
 
 export interface IModal {
   type: ModalTypes;

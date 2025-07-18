@@ -1,3 +1,5 @@
+'use client';
+
 import './nft-card.scss';
 import Image from 'next/image';
 import ethereum from '@/assets/icons/ethereum.svg?url';

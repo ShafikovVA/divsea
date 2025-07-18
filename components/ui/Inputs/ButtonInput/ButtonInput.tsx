@@ -1,10 +1,19 @@
 'use client';
 import './button-input.scss';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Input, { IInputProps } from '../Input/Input';
+import cn from 'classnames';
+import Image from 'next/image';
 
-const ButtonInput = (props: IInputProps) => {
-  const { placeholder, className, onChange } = props;
+interface IButtonInputProps extends IInputProps {
+  primary?: boolean;
+  outline?: boolean;
+  icon?: React.ReactNode | string;
+}
+
+const ButtonInput = (props: IButtonInputProps) => {
+  const imageRef = useRef<HTMLSpanElement>(null);
+  const { placeholder, className, onChange, icon, ...rest } = props;
   const [inputValue, setInputValue] = useState<string | undefined>(undefined);
   const [isAnimationUp, setIsAnimationUp] = useState(false);
   const InputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,19 +41,45 @@ const ButtonInput = (props: IInputProps) => {
     <div className="button-input__container">
       {inputValue && placeholder && (
         <span
-          className={`button-input__placeholder-description ${isAnimationUp ? 'animation-up' : ''}`}
+          className={cn('button-input__placeholder-description', {
+            'animation-up': isAnimationUp,
+          })}
         >
           {placeholder}
         </span>
       )}
       <Input
-        {...props}
+        {...rest}
+        value={inputValue}
+        placeholder={placeholder}
         className={`button-input ${className}`}
         onChange={InputHandler}
+        style={{
+          paddingLeft: imageRef.current?.clientWidth
+            ? imageRef.current?.clientWidth + 10
+            : 'initial',
+        }}
       />
-      <span className={`button-input ${className} button-input__placeholder`}>
+      {icon && (
+        <span ref={imageRef} className={`button-input__icon`}>
+          {typeof icon === 'string' ? <Image src={icon} alt="icon" /> : icon}
+        </span>
+      )}
+      <p className={`button-input button-input__placeholder`}>
+        {icon && (
+          <span
+            className={`button-input__icon`}
+            style={{
+              paddingLeft: imageRef.current?.clientWidth
+                ? imageRef.current?.clientWidth + 10
+                : 'initial',
+            }}
+          >
+            {typeof icon === 'string' ? <Image src={icon} alt="icon" /> : icon}
+          </span>
+        )}
         {inputValue ? inputValue : placeholder}
-      </span>
+      </p>
     </div>
   );
 };

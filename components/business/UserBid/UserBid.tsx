@@ -1,7 +1,7 @@
 import './user-bid.scss';
 import EthereumIcon from '@/assets/icons/ethereum.svg';
 import VerifiedIcon from '@/assets/icons/veerified-check.svg';
-import { IUserBid } from '@/types/nfts/IHistoryOfBid';
+import { IUserBid } from '@/types/nfts/IUserBid';
 import Image from 'next/image';
 
 interface IUserBidProps extends IUserBid {

@@ -1,5 +1,5 @@
 'use client';
-import { IUserBid } from '@/types/nfts/IHistoryOfBid';
+import { IUserBid } from '@/types/nfts/IUserBid';
 import './history-of-bid-form.scss';
 import UsersBidList from './UsersBidList/UsersBidList';
 import Button from '@/components/ui/Button/Button';

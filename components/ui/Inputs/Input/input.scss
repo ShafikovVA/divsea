@@ -2,18 +2,188 @@
 @use '/styles/media';
 
 .input {
-  border: 1.5px solid variables.$black;
-  padding: 10px;
   width: 100%;
   font-weight: 500;
   font-size: 13.45px;
   line-height: 20px;
   letter-spacing: -2%;
-  border-radius: 12px;
-  transition: .2s variables.$transition-type;
+  padding: 0;
+  border: none;
+  background: transparent;
+  outline: none;
 
   @include media.deskS{ 
     font-size: 9.56px;
     line-height: 14px;
   }
+
+  &__container {
+    position: relative;
+    border: 1.5px solid variables.$black;
+    padding: 10px;
+    transition: .2s variables.$transition-type;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 12px;
+    cursor: text;
+
+    &.button-input {
+      border: none;
+      background: transparent;
+      padding: 18px 30px;
+      height: 100%;
+      transition: 0.3s variables.$transition-type;
+      width: 100%;
+      border-radius: 12.41px;
+      @include media.deskS{
+        border-radius: 8.89px;
+      }
+  
+      .input__placeholder {
+        position: absolute;
+        top: 0;
+        left: 30px;
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        white-space: pre;
+        font-family: Poppins, sans-serif;
+        z-index: -1;
+    
+        &-description {
+          color: variables.$black;
+          z-index: 1;
+          font-size: 12px;
+          line-height: 18px;
+          letter-spacing: 0.01em;
+          font-weight: 400;
+          position: absolute;
+          top: -20px;
+          left: 9px;
+          width: fit-content;
+          height: fit-content;
+          overflow: hidden;
+          white-space: pre;
+          transition: 0.3s variables.$transition-type;
+          opacity: 0;
+          transform: translateY(100%);
+    
+          &.animation-up {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+  
+      &-primary .input,
+      &-outline .input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16.27px;
+        font-weight: 500;
+        line-height: 24.41px;
+        letter-spacing: 0.01em;
+  
+        @include media.breakpoint-down('deskS') {
+          font-size: 11.57px;
+          font-weight: 500;
+          line-height: 17.36px;
+          letter-spacing: 0.01em;
+          padding: 12px 20px;
+        }
+        @include media.breakpoint-down('tabM') {
+          font-size: 11.66px;
+          font-weight: 500;
+          line-height: 17.49px;
+          letter-spacing: 0.01em;
+        }
+        @include media.breakpoint-down('mobM') {
+          padding: 14px 17px;
+        }
+      }
+  
+      &-primary {
+        background: variables.$black;
+        color: variables.$white;
+       
+          &:hover {
+            background: variables.$black1Hover;
+          }
+          &:active {
+            background: variables.$black1Active;
+          }
+    
+          &.color-reverse {
+            background: variables.$white;
+            color: variables.$black;
+    
+            &:hover {
+              background: variables.$whiteHover;
+            }
+            &:active {
+              background: variables.$whiteActive;
+            }
+          }
+      }
+  
+      &-outline {
+        border: 1.07px solid variables.$black;
+        color: variables.$black;
+        .input {
+          &:focus {
+            background: variables.$blackHover;
+            color: variables.$white;
+          }
+          &:active {
+            background: variables.$blackActive;
+            color: variables.$white;
+          }
+          &:not(:focus)::placeholder {
+            color: variables.$black;
+          }
+          &:focus-visible {
+            outline: none;
+          }
+    
+          &.color-reverse {
+            border-color: variables.$white;
+            color: variables.$white;
+    
+            &:hover {
+              background: variables.$white;
+              color: variables.$black;
+            }
+            &:active {
+              background: variables.$whiteActive;
+              color: variables.$black;
+            }
+          }
+        }
+      }
+      &__icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 27px;
+        height: 28px;
+        margin-right: 10px;
+      }
+    } 
+  }
+
+  &__icon {
+    
+  }
+
+  &__placeholder{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
 }

@@ -1,6 +1,6 @@
-@use '@/styles/typography';
-@use '@/styles/media';
-@use '@/styles/variables';
+@use '/styles/typography';
+@use '/styles/media';
+@use '/styles/variables';
 
 .hero {
   padding-top: 95px;
@@ -237,7 +237,7 @@
 
     &-text {
       @include typography.H3;
-      font-family: 'Inter', sans-serif;
+      & {font-family: 'Inter', sans-serif};
     }
 
     &-description {

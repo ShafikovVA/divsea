@@ -1,10 +1,13 @@
 'use client';
 import { useState, useRef } from 'react';
-import ButtonInput from '@/components/ui/Inputs/ButtonInput/ButtonInput';
-import { INftsFilters } from '@/app/type/nfts/INftFilters';
+import Input from '@/components/ui/Inputs/Input/Input';
+import { INftsFilters } from '@/types/nfts/INftFilters';
 import { useAppDispatch } from '@/store/hooks';
 import { getNfts } from '@/store/reducers/business/nftsReducer';
 import { debounce } from '@/utils/debounce';
+import CategoryIcon from '@/assets/icons/catalog/category.svg';
+import CollectionIcon from '@/assets/icons/catalog/collection.svg';
+import PriceIcon from '@/assets/icons/catalog/price.svg';
 
 const CardFilters = () => {
   const [filters, setFilters] = useState<INftsFilters>({});
@@ -32,24 +35,27 @@ const CardFilters = () => {
 
   return (
     <div className={'catalog__filters'}>
-      <ButtonInput
+      <Input
         onChange={(e) => onFilterChange(e)}
         name="category"
-        className={'button-input-outline'}
+        button="outline"
         placeholder="Category"
+        icon={<CategoryIcon />}
       />
-      <ButtonInput
+      <Input
         onChange={(e) => onFilterChange(e)}
         name="collection"
-        className={'button-input-outline'}
+        button="outline"
         placeholder="Collection"
-      ></ButtonInput>
-      <ButtonInput
+        icon={<CollectionIcon />}
+      />
+      <Input
         onChange={(e) => onFilterChange(e)}
         name="price"
-        className={'button-input-outline'}
+        button="outline"
         placeholder="Price"
-      ></ButtonInput>
+        icon={<PriceIcon />}
+      />
     </div>
   );
 };

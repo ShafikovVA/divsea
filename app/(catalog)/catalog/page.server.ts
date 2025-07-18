@@ -1,5 +1,5 @@
 'use server';
-import { INfts } from '@/app/type/nfts/INfts';
+import { INfts } from '@/types/nfts/INfts';
 
 export const getCards = async (page: number = 1): Promise<INfts> => {
   try {
@@ -8,17 +8,17 @@ export const getCards = async (page: number = 1): Promise<INfts> => {
     });
     const data: INfts = await res.json();
     return data as INfts;
-  } catch (error) {
-    console.error(error);
-
+  } catch (e) {
+    console.error(e);
     return {
-      first: 0,
-      prev: 0,
-      next: 0,
-      last: 0,
-      pages: 0,
+      first: 1,
+      prev: 1,
+      next: 1,
+      last: 1,
+      pages: 1,
       items: 0,
       data: [],
-    } as INfts;
+      pending: true,
+    };
   }
 };

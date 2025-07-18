@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 import CloseIcon from '@/assets/icons/cross.svg?url';
 import BurgerIcon from '@/assets/icons/burger.svg?url';
- 
+
 const meta = {
   title: 'UI/Button',
   component: Button,
 } satisfies Meta<typeof Button>;
- 
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 

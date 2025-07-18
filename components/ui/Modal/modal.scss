@@ -1,5 +1,7 @@
+@use '/styles/variables';
+
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -8,7 +10,8 @@
   z-index: 1000;
   display: flex;
   justify-content: center;
-  
+  animation: modal-fade 0.3s variables.$transition-type;
+
   .container {
     display: flex;
     justify-content: center;
@@ -17,10 +20,32 @@
   }
 
   &__content {
+    transition: transform 0.2s variables.$transition-type;
     border: 2.12px solid #000000;
     background-color: #fff;
     padding: 45px 20px 40px 20px;
     border-radius: 20px;
     width: fit-content;
+    animation: modal-rise 0.3s variables.$transition-type;
+  } 
+
+  @keyframes modal-rise {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes modal-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

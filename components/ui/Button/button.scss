@@ -129,5 +129,11 @@
       border-radius: 8.5px;
     }
   }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
 }
 

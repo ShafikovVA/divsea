@@ -1,4 +1,4 @@
-import './sliderButtons.scss';
+import './slider-buttons.scss';
 
 interface ISliderButtons {
   onClickNext?: () => void;

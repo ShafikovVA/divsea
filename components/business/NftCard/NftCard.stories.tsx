@@ -1,14 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { Provider } from 'react-redux';
+import { makeStore } from '@/store';
 import NftCard from './NftCard';
- 
-const meta = {
+
+const meta: Meta<typeof NftCard> = {
   title: 'Business/NftCard',
   component: NftCard,
-} satisfies Meta<typeof NftCard>;
- 
+  decorators: [
+    (Story) => (
+      <Provider store={makeStore()}>
+        <Story />
+      </Provider>
+    ),
+  ],
+};
+
 export default meta;
 type Story = StoryObj<typeof meta>;
- 
+
 export const Default: Story = {
   args: {
     title: 'Sun-Glass',

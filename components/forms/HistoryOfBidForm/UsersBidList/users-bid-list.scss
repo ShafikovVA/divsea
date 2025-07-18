@@ -1,0 +1,30 @@
+@use '/styles/media';
+@use '/styles/variables';
+
+.users-bid-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  @include media.deskS {
+    gap: 12px;
+  }
+
+  &__empty {
+    font-size: 20px;
+    font-weight: 400;
+    color: variables.$grey;
+    text-align: center;
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+
+    &-text {
+      font-weight: 500;
+      color: variables.$grey8;
+    }
+  }
+}

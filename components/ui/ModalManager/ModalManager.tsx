@@ -1,30 +1,30 @@
-import { RootState } from '@/store';
+'use client';
 import { IModal, ModalTypes } from '@/types/modals/IModal';
-import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../Modal/Modal';
-import HistoryOfBidModal from '@/components/modals/HistoryOfBidModal/HistoryOfBidModal';
+import HistoryOfBidForm from '@/components/forms/HistoryOfBidForm/HistoryOfBidForm';
+import { useAppSelector } from '@/store/hooks';
 
 const ModalContent = ({ modal }: { modal: IModal }) => {
-  switch (modal.type) {
+  const { type, data } = modal;
+
+  switch (type) {
     case ModalTypes.HISTORY_OF_BID:
-      return <HistoryOfBidModal data={modal.data} />;
+      return <HistoryOfBidForm data={data[ModalTypes.HISTORY_OF_BID]} />;
     default:
       return null;
   }
 };
 
 const ModalManager = () => {
-  // const modals = useSelector((state: RootState) => state.modal);
+  const modals = useAppSelector((state) => state.modal);
+
   return (
     <div>
-      {/* {modals.map((modal, index) => (
-        <Modal key={index}>
+      {modals.map((modal, index) => (
+        <Modal index={index} key={index}>
           <ModalContent modal={modal} />
         </Modal>
-      ))} */}
-      <Modal>
-        <HistoryOfBidModal data={[]} />
-      </Modal>
+      ))}
     </div>
   );
 };

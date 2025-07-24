@@ -1,6 +1,8 @@
 @use '/styles/variables';
 @use '/styles/media';
 
+$input-transition-delay: 0.2s;
+
 .input {
   width: 100%;
   font-weight: 500;
@@ -11,6 +13,7 @@
   border: none;
   background: transparent;
   outline: none;
+  transition: color $input-transition-delay variables.$transition-type;
 
   @include media.deskS{ 
     font-size: 9.56px;
@@ -21,7 +24,7 @@
     position: relative;
     border: 1.5px solid variables.$black;
     padding: 10px;
-    transition: .2s variables.$transition-type;
+    transition: $input-transition-delay variables.$transition-type;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -29,77 +32,68 @@
     cursor: text;
 
     &.button-input {
-      border: none;
       background: transparent;
       padding: 18px 30px;
       height: 100%;
-      transition: 0.3s variables.$transition-type;
+      transition: $input-transition-delay variables.$transition-type;
       width: 100%;
-      border-radius: 12.41px;
+      border-width: 2.35px;
+      border-radius: 14.09px;
+      
       @include media.deskS{
-        border-radius: 8.89px;
+        border-radius: 10.02px;
       }
   
       .input__placeholder {
         position: absolute;
         top: 0;
-        left: 30px;
-        visibility: hidden;
+        left: 30px; 
         width: 100%;
         height: 100%;
-        overflow: hidden;
         white-space: pre;
         font-family: Poppins, sans-serif;
-        z-index: -1;
-    
-        &-description {
-          color: variables.$black;
-          z-index: 1;
-          font-size: 12px;
-          line-height: 18px;
-          letter-spacing: 0.01em;
-          font-weight: 400;
-          position: absolute;
-          top: -20px;
-          left: 9px;
-          width: fit-content;
-          height: fit-content;
-          overflow: hidden;
-          white-space: pre;
-          transition: 0.3s variables.$transition-type;
-          opacity: 0;
-          transform: translateY(100%);
-    
-          &.animation-up {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        color: variables.$black;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+        position: absolute;
+        top: -20px;
+        left: 9px;
+        width: fit-content;
+        height: fit-content;
+        white-space: pre;
+        transition: $input-transition-delay variables.$transition-type;
+        transform: translateY(100%);
+
+
+        &.animation-up {
+          transform: translateY(0);
+          visibility: visible;
         }
       }
-  
+
       &-primary .input,
-      &-outline .input {
+      &-outline .input,
+      &-primary .button-input-container__value,
+      &-outline .button-input-container__value {
         font-family: 'Poppins', sans-serif;
         font-size: 16.27px;
         font-weight: 500;
         line-height: 24.41px;
         letter-spacing: 0.01em;
   
-        @include media.breakpoint-down('deskS') {
+        @include media.deskS {
           font-size: 11.57px;
           font-weight: 500;
           line-height: 17.36px;
           letter-spacing: 0.01em;
-          padding: 12px 20px;
         }
-        @include media.breakpoint-down('tabM') {
+        @include media.tabM {
           font-size: 11.66px;
           font-weight: 500;
           line-height: 17.49px;
           letter-spacing: 0.01em;
-        }
-        @include media.breakpoint-down('mobM') {
-          padding: 14px 17px;
         }
       }
   
@@ -109,9 +103,25 @@
        
           &:hover {
             background: variables.$black1Hover;
+            .input {
+              color: variables.$grey8;
+            }
+            &::placeholder {
+              color: variables.$grey8;
+            }
           }
           &:active {
             background: variables.$black1Active;
+          }
+          &.input-focused {
+            background: variables.$black1Active;
+
+            .input {
+              color: variables.$white;
+              &::placeholder {
+                color: variables.$white;
+              }
+            }
           }
     
           &.color-reverse {
@@ -124,57 +134,87 @@
             &:active {
               background: variables.$whiteActive;
             }
+            &.input-focused {
+              background: variables.$whiteActive;
+            }
+          }
+          .input {
+            color: variables.$white;
+            &::placeholder {
+              color: variables.$white;
+            }
           }
       }
   
-      &-outline {
-        border: 1.07px solid variables.$black;
+      &-outline { 
         color: variables.$black;
-        .input {
-          &:focus {
-            background: variables.$blackHover;
-            color: variables.$white;
+
+        &:hover {
+          background: variables.$blackHover;
+          .input {
+            color: variables.$grey8;
           }
-          &:active {
-            background: variables.$blackActive;
-            color: variables.$white;
+          .input__icon {
+            fill: variables.$grey8;
           }
-          &:not(:focus)::placeholder {
-            color: variables.$black;
-          }
-          &:focus-visible {
-            outline: none;
-          }
-    
-          &.color-reverse {
-            border-color: variables.$white;
-            color: variables.$white;
-    
-            &:hover {
-              background: variables.$white;
-              color: variables.$black;
+          .input {
+            &::placeholder {
+              color: variables.$grey8;
             }
-            &:active {
-              background: variables.$whiteActive;
+          }
+        }
+        &.input-focused {
+          background: variables.$blackActive;
+          .input {
+            color: variables.$white;
+          }
+          .input__icon {
+            fill: variables.$white;
+          }
+
+          .input {
+            &::placeholder {
+              color: variables.$white;
+            }
+          }
+        }
+
+        .input {
+          &::placeholder {
+            color: variables.$black;
+            .input {
               color: variables.$black;
             }
           }
         }
+
+        &.color-reverse {
+          border-color: variables.$white;
+          color: variables.$white;
+  
+          &:hover {
+            background: variables.$white;
+            color: variables.$black;
+          }
+          &:active {
+            background: variables.$whiteActive;
+            color: variables.$black;
+          }
+          &.input-focused {
+            background: variables.$whiteActive;
+            color: variables.$black;
+          }
+        }
       }
-      &__icon {
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        width: 27px;
-        height: 28px;
-        margin-right: 10px;
-      }
+    
     } 
   }
 
   &__icon {
-    
+    transition: $input-transition-delay variables.$transition-type;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__placeholder{
@@ -186,4 +226,26 @@
     height: 100%;
   }
   
+}
+
+.button-input {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    .input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .button-input-container__value {
+     visibility: hidden;
+    }
+  } 
 }

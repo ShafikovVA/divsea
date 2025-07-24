@@ -40,6 +40,7 @@ const CardFilters = () => {
         name="category"
         button="outline"
         placeholder="Category"
+        maxLength={25}
         icon={<CategoryIcon />}
       />
       <Input
@@ -47,6 +48,7 @@ const CardFilters = () => {
         name="collection"
         button="outline"
         placeholder="Collection"
+        maxLength={25}
         icon={<CollectionIcon />}
       />
       <Input
@@ -54,6 +56,8 @@ const CardFilters = () => {
         name="price"
         button="outline"
         placeholder="Price"
+        type="number"
+        maxLength={25}
         icon={<PriceIcon />}
       />
     </div>

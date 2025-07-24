@@ -1,0 +1,75 @@
+@use '/styles/typography';
+@use '/styles/variables';
+@use '/styles/media';
+
+.product-detail-card__content-price {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-right: 8px;
+  margin-bottom: 55px;
+
+  @include media.deskS {
+    margin-bottom: 40px;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    @include media.deskS {
+      gap: 4px;
+    }
+
+    &.date {
+      align-items: flex-end;
+      gap: 17px;
+
+      @include media.deskS {
+        gap: 12px;
+      }
+
+      & > p:last-child {
+        font-weight: 400;
+        font-size: 19.23px;
+        line-height: 30.23px;
+        color: variables.$black;
+        text-align: right;
+
+        @include media.deskS {
+          font-weight: 400;
+          font-size: 13.68px;
+          line-height: 21.5px;
+        }
+      }
+    }
+
+    & > p:first-child {
+      @include typography.P2;
+      color: variables.$grey8D;
+    }
+
+    & > p:last-child {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include typography.H3;
+      color: variables.$blackFaded;
+      
+      > svg {
+        width: 22px;
+        height: 35px;
+
+        @include media.deskS {
+          max-width: 15.89px;
+          max-height: 25.32px;
+        }
+      }
+    }
+  }
+
+  & > button {
+    width: 100%;
+  }
+}

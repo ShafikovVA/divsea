@@ -16,3 +16,35 @@ export const Default: Story = {
     },
   },
 };
+
+export const InputWithValue: Story = {
+  args: {
+    placeholder: 'Enter your email',
+    value: 'test@test.com',
+    style: {
+      maxWidth: '400px',
+    },
+  },
+};
+
+export const InputButtonPrimary: Story = {
+  args: {
+    placeholder: 'Enter your email',
+    value: 'test@test.com',
+    button: 'primary',
+    style: {
+      maxWidth: 'fit-content',
+    },
+  },
+};
+
+export const InputButtonOutline: Story = {
+  args: {
+    placeholder: 'Enter your email',
+    value: 'test@test.com',
+    button: 'outline',
+    style: {
+      maxWidth: 'fit-content',
+    },
+  },
+};

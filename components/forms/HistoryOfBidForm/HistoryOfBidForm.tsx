@@ -33,7 +33,7 @@ const HistoryOfBidModal = ({ data }: IHistoryOfBidModalProps) => {
               { label: 'USDC', value: 'usdc' },
             ]}
           />
-          <Input />
+          <Input maxLength={19} type="number" />
         </InputsContainer>
         <Button primary icon={<Cardholder />}>
           Submit

@@ -1,6 +1,7 @@
 import { HTMLInputTypeAttribute, RefObject, useState } from 'react';
 import './input.scss';
 import cn from 'classnames';
+import InputTypeContainer from './InputButtonContainer';
 
 export interface IInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -13,17 +14,35 @@ export interface IInputProps
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   icon?: React.ReactNode | string;
   button?: 'primary' | 'outline';
+  children?: React.ReactNode;
 }
 
 const Input = (props: IInputProps) => {
-  const { ref, className, placeholder, icon, button, onChange, ...rest } =
-    props;
-  const [inputValue, setInputValue] = useState<string | undefined>(undefined);
+  const {
+    ref,
+    className,
+    placeholder,
+    icon,
+    button,
+    onChange,
+    style,
+    value,
+    maxLength = 255,
+    type,
+    ...rest
+  } = props;
+  const [isFocused, setIsFocused] = useState(false);
+  const [inputValue, setInputValue] = useState<string | undefined>(value);
   const [isAnimationUp, setIsAnimationUp] = useState(false);
   const InputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    animatePlaceholder(e.target.value);
+    let value = e.target.value;
+    if (type === 'number' && maxLength > 0 && value.length > maxLength) {
+      value = value.slice(0, maxLength);
+    }
+    setInputValue(value);
+    animatePlaceholder(value);
     if (onChange) {
+      e.target.value = value;
       onChange(e);
     }
   };
@@ -47,17 +66,30 @@ const Input = (props: IInputProps) => {
         'button-input': button,
         'button-input-outline': button === 'outline',
         'button-input-primary': button === 'primary',
+        'input-focused': isFocused,
         className,
       })}
+      style={style}
     >
       {icon && <span className="input__icon">{icon}</span>}
-      <input
-        ref={ref}
-        {...rest}
+      <InputTypeContainer
+        type={button ? 'button' : undefined}
+        value={inputValue}
         placeholder={placeholder}
-        className={`input`}
-        onChange={InputHandler}
-      />
+      >
+        <input
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          ref={ref}
+          value={inputValue}
+          maxLength={maxLength}
+          type={type}
+          {...rest}
+          placeholder={placeholder}
+          className={`input`}
+          onChange={InputHandler}
+        />
+      </InputTypeContainer>
       {inputValue && placeholder && (
         <span
           className={cn('input__placeholder', {

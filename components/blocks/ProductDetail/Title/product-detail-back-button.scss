@@ -1,0 +1,39 @@
+@use '/styles/variables';
+@use '/styles/media';
+@use '/styles/typography';
+
+.product-detail-back-button {
+  width: 36.81512451171875px;
+  height: 36.81512451171875px;
+  border-radius: 36.82px;
+  cursor: pointer;
+
+  @include media.deskS {
+    width: 26.206031799316406;
+    height: 26.206031799316406;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 26.21px;
+  }
+
+  @include media.tabM {
+    display: none;
+  }
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 55px;
+
+    @include media.deskS {
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-text {
+    @include typography.H3;
+  }
+}

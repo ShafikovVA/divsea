@@ -34,3 +34,4 @@ git clone https://github.com/ShafikovVA/divsea
 cd divsea
 yarn
 yarn dev
+yarn server

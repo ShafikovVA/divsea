@@ -6,11 +6,12 @@
 ## 🚀 Технологии
 - Next.js 15, App Router
 - React 19, TypeScript
-- Tailwind CSS
+- SCSS
 - Redux Toolkit
 - SSR
 - REST API
 - ESLint, Prettier
+- StoryBook
 
 ## 🧩 Функциональность
 - Просмотр и фильтрация NFT

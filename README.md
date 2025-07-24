@@ -17,7 +17,6 @@
 - Просмотр и фильтрация NFT
 - Страница коллекции
 - Адаптивный дизайн
-- SEO-оптимизация
 
 ## Дизайн:
 https://www.figma.com/design/VcgXyogEdaIAhaVBPlf5nC/DiveSea?node-id=0-1&p=f&t=JHUkQONELJBGKbAA-0

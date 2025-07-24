@@ -1,8 +1,19 @@
+@use '/styles/media';
+
 .nft-page {
     padding-top: 155px;
+
+    @include media.tabM {
+      padding-top: 90px;
+    }
 
     .container {
       display: flex;
       flex-direction: column;
+
+      @include media.mobM {
+        width: 100%;
+        align-items: center;
+      }
     }
 }

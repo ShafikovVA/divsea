@@ -48,6 +48,11 @@
     & > p:first-child {
       @include typography.P2;
       color: variables.$grey8D;
+
+      @include media.tabM {
+        font-size: 10.55px;
+        line-height: 12.98px;
+      }
     }
 
     & > p:last-child {
@@ -56,6 +61,11 @@
       gap: 10px;
       @include typography.H3;
       color: variables.$blackFaded;
+
+      @include media.tabM {
+        font-size: 18.18px;
+        line-height: 27.88px;
+      }
       
       > svg {
         width: 22px;

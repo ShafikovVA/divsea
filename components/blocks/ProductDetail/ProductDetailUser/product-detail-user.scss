@@ -27,6 +27,12 @@
       min-width: 46px;
       min-height: 46px;
     }
+    @include media.mobM {
+      max-width: 33px;
+      max-height: 33px;
+      min-width: 33px;
+      min-height: 33px;
+    }
   }
 
   &__content {

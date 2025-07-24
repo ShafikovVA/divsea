@@ -21,8 +21,16 @@
 		border-radius: 18px;
 	}
 	@include media.tabM {
-		flex-direction: column;
+		gap: 56px;
 		height: auto;
+	}
+	@include media.mobM {
+		width: 310px;
+		flex-direction: column;
+		padding: 15px;
+		width: fit-content;
+		gap: 20px;
+
 	}
 
 	&__image {
@@ -40,6 +48,18 @@
 			max-height: 400px;
 			border-radius: 18px;
 		}
+		@include media.tabM {
+			min-width: 250px;
+			min-height: 250px;
+			max-width: 250px;
+			max-height: 250px;
+		}
+		@include media.mobM {
+			min-width: 279.37px;
+			min-height: 245.69px;
+			max-width: 279.37px;
+			max-height: 245.69px;
+		}
 	}
 
 	&__content {
@@ -50,6 +70,9 @@
 		@include media.deskS {
 			width: 336.96px;
 		}
+		@include media.tabM {
+			width: 100%;
+		}
 
 		&-description {
 			@include typography.P2;
@@ -59,6 +82,9 @@
 
 			@include media.deskS {
 				margin-bottom: 50px;
+			}
+			@include media.tabM {
+				margin-bottom: 35px;
 			}
 		}
 
@@ -74,6 +100,16 @@
 			gap: 10px;
 			margin-bottom: 45px;
 		}
+		@include media.tabM {
+			margin-bottom: 30px;
+			gap: 10px;
+			justify-content: space-between;
+		}
+		@include media.mobM {
+			gap: 40px;
+			justify-content: start;
+			margin-bottom: 42px;
+		}
 	}
 
 	&__title {
@@ -82,16 +118,18 @@
 		line-height: 31.82px;
 		margin-bottom: 30px;
 		color: variables.$blackFaded;
+		letter-spacing: 0;
 
 		@include media.deskS {
-			font-size: 36.3px;
+			font-size: 30px;
 			line-height: 22.63px;
 			margin-bottom: 20px;
 		}
-		@include media.tabM {
+		@include media.mobM {
 			font-size: 15.64px;
 			line-height: 22.59px;
 			margin-bottom: 6px;
+			text-align: start;
 		}
 	}
 	

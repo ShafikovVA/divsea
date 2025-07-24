@@ -21,13 +21,6 @@
 ## Дизайн:
 https://www.figma.com/design/VcgXyogEdaIAhaVBPlf5nC/DiveSea?node-id=0-1&p=f&t=JHUkQONELJBGKbAA-0
 
-## 🖼️ Скриншоты
-![Главная](public/screenshot-main.jpg)
-![Каталог](public/screenshot-collection.jpg)
-
-## 🔗 Демо
-[Открыть в браузере](https://divsea.vercel.app)
-
 ## ⚙️ Как запустить
 ```bash
 git clone https://github.com/ShafikovVA/divsea

@@ -32,7 +32,7 @@ const fetchNfts = () => {
       }).toString();
       try {
         const response = await fetch(
-          `http://localhost:3001/cards${queryString ? '?' + queryString : ''}`,
+          `/api/catalog${queryString ? '?' + queryString : ''}`,
         );
         const responseData: INfts = await response.json();
         return responseData;

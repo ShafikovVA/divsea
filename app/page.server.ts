@@ -4,7 +4,7 @@ import { INftCard } from '@/types/nfts/INftCard';
 
 export const getNfts = async (): Promise<INftCard[]> => {
   try {
-    const response = await fetch('http://localhost:3001/cards?_limit=15');
+    const response = await fetch(`${process.env.BASE_URL}/cards?_limit=15`);
     const data: INftCard[] = await response.json();
     return data;
   } catch (error) {
@@ -15,7 +15,7 @@ export const getNfts = async (): Promise<INftCard[]> => {
 
 export const getExploreMarketplace = async (): Promise<INftCard[]> => {
   try {
-    const response = await fetch('http://localhost:3001/cards?_limit=8');
+    const response = await fetch(`${process.env.BASE_URL}/cards?_limit=8`);
     const data: INftCard[] = await response.json();
     return data;
   } catch (error) {

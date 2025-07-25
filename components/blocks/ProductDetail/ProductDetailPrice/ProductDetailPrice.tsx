@@ -1,19 +1,27 @@
 import './product-detail-price.scss';
 import ETHIcon from '@/assets/icons/ethereum-big.svg';
+import moment from 'moment';
 
-const ProductDetailPrice = () => {
+interface IProductDetailPriceProps {
+  price: number;
+  date: string;
+}
+
+const ProductDetailPrice = ({ price, date }: IProductDetailPriceProps) => {
+  const dateformated = moment(date).format('MMM D, YYYY, hh:mm');
+
   return (
     <div className="product-detail-card__content-price">
       <div className="product-detail-card__content-price-item">
         <p>Current Bid</p>
         <p>
           <ETHIcon />
-          1.75
+          {price}
         </p>
       </div>
       <div className="product-detail-card__content-price-item date">
         <p>End in</p>
-        <p>Jun 17, 2023 at 05:08</p>
+        <p>{dateformated}</p>
       </div>
     </div>
   );

@@ -3,28 +3,45 @@ import './product-detail.scss';
 import ProductDetailPrice from './ProductDetailPrice/ProductDetailPrice';
 import ProductDetailUser from './ProductDetailUser/ProductDetailUser';
 import CardHolderIcon from '@/assets/icons/cardholder.svg';
+import { INftCard } from '@/types/nfts/INftCard';
 
-const ProductDetail = () => {
+const ProductDetail = ({
+  title,
+  description,
+  image,
+  price,
+  historyOfBid,
+}: INftCard) => {
   return (
     <div className="product-detail-card">
       <div className="product-detail-card__image">
         {/* <Image src={image} alt="Product Detail" /> */}
       </div>
       <div className="product-detail-card__content">
-        <h1 className="product-detail-card__title">Project Sun-Glass</h1>
+        <h1 className="product-detail-card__title">{title}</h1>
         <div className="product-detail-card__content-description">
-          <p>
-            A collection of 10,000 utility-enabled PFPs
-            <br /> that feature a richly diverse and unique
-            <br /> pool of rarity-powered traits.
-          </p>
+          <p>{description}</p>
         </div>
 
-        <div className="product-detail-card__users">
-          <ProductDetailUser title="Perperzon" status="creator" />
-          <ProductDetailUser title="Videz" status="owner" />
-        </div>
-        <ProductDetailPrice />
+        {historyOfBid && (
+          <div className="product-detail-card__users">
+            <ProductDetailUser
+              title={historyOfBid[0].userName}
+              status="creator"
+            />
+            {historyOfBid.at(-1) && historyOfBid.length > 1 && (
+              <ProductDetailUser
+                title={historyOfBid[historyOfBid.length - 1].userName}
+                status="owner"
+              />
+            )}
+          </div>
+        )}
+
+        <ProductDetailPrice
+          price={price}
+          date={historyOfBid[historyOfBid.length - 1].date}
+        />
         <Button primary icon={<CardHolderIcon />}>
           Place Bid
         </Button>

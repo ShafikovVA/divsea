@@ -1,4 +1,4 @@
-import './product-detail-price.scss';
+import './nft-card-detail-price.scss';
 import ETHIcon from '@/assets/icons/ethereum-big.svg';
 import moment from 'moment';
 
@@ -7,7 +7,7 @@ interface IProductDetailPriceProps {
   date: string;
 }
 
-const ProductDetailPrice = ({ price, date }: IProductDetailPriceProps) => {
+const NftCardDetailPrice = ({ price, date }: IProductDetailPriceProps) => {
   const dateformated = moment(date).format('MMM D, YYYY, hh:mm');
 
   return (
@@ -27,4 +27,4 @@ const ProductDetailPrice = ({ price, date }: IProductDetailPriceProps) => {
   );
 };
 
-export default ProductDetailPrice;
+export default NftCardDetailPrice;

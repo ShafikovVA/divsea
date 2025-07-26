@@ -12,6 +12,7 @@ const initialState: INfts = {
   pending: true,
   data: [],
 };
+export const nftPerPage = '20';
 
 const fetchNfts = () => {
   let filtersValue: INftsFilters = {};
@@ -29,6 +30,7 @@ const fetchNfts = () => {
       const queryString = new URLSearchParams({
         ...filtersValue,
         _page: pageValue?.toString() || '',
+        _per_page: nftPerPage,
       }).toString();
       try {
         const response = await fetch(

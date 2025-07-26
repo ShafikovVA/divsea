@@ -9,6 +9,7 @@ import { useAppDispatch } from '@/store/hooks';
 import { ModalTypes } from '@/types/modals/IModal';
 import { showModal } from '@/store/reducers/ui/modalsReduser';
 import Link from 'next/link';
+import NoImage from '@/components/ui/NoImage/NoImage';
 
 interface INftCardProps extends INftCard {
   big?: boolean;
@@ -16,7 +17,7 @@ interface INftCardProps extends INftCard {
 
 export const NftCard = (props: INftCardProps) => {
   const dispatch = useAppDispatch();
-  const { big, title, price, image, historyOfBid } = props;
+  const { big, title, price, image, historyOfBid, slug } = props;
 
   const handleClick = () => {
     dispatch(
@@ -30,15 +31,23 @@ export const NftCard = (props: INftCardProps) => {
   return (
     <div className={`product-card ${big ? 'big' : ''}`}>
       <div className="product-card__picture">
-        <Image
-          src={image}
-          alt={`${title} image`}
-          fill
-          sizes="(max-width: 768px) 179.86px, 252.9px"
-          style={{ objectFit: 'cover' }}
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={`${title} image`}
+            fill
+            sizes="(max-width: 768px) 179.86px, 252.9px"
+            style={{ objectFit: 'cover' }}
+          />
+        ) : (
+          <NoImage />
+        )}
       </div>
-      <Link href="#" className="product-card__title">
+      <Link
+        href={`/catalog/${slug}`}
+        title={title}
+        className="product-card__title"
+      >
         {title}
       </Link>
       <div className="product-card__controls">

@@ -5,7 +5,8 @@ export interface INftCard {
   slug: string;
   title: string;
   description: string;
+  category: string;
   price: number;
-  image: string;
+  image: string | null;
   historyOfBid: IUserBid[];
 }

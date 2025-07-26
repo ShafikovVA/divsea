@@ -15,11 +15,9 @@ export const getCardData = async (slugname: string) => {
     }
     throw new Error('Failed to fetch data');
   }
-  const data = await cardData.json();
-
-  if (data.length === 0) {
+  const cardDataJson = await cardData.json();
+  if (cardDataJson.length === 0) {
     return notFound();
   }
-
-  return data[0];
+  return cardDataJson[0];
 };

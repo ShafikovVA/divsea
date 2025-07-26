@@ -1,8 +1,8 @@
 'use server';
-import ProductDetail from '@/components/blocks/ProductDetail/ProductDetail';
+import NftCardDetail from '@/components/business/NftCardDetail/NftCardDetail';
 import './nft-page.scss';
 import React from 'react';
-import ProductDetailTitle from '@/components/blocks/ProductDetail/Title/ProductDetailTitle';
+import ProductDetailTitle from '@/components/business/NftCardDetail/Title/ProductDetailTitle';
 import { getCardData } from '@/app/(catalog)/catalog/[slugname]/page.server';
 import { INftCard } from '@/types/nfts/INftCard';
 
@@ -18,7 +18,7 @@ export default async function NftPage({
     <section className={'nft-page'}>
       <div className="container">
         <ProductDetailTitle />
-        <ProductDetail {...productData} />
+        <NftCardDetail {...productData} />
       </div>
     </section>
   );

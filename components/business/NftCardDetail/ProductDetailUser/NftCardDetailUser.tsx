@@ -1,8 +1,9 @@
-// import Image from 'next/image';
-import './product-detail-user.scss';
+import Image from 'next/image';
+import './nft-card-detail-user.scss';
+import userPlaceholderImage from '@/assets/images/user/image_placeholder.png';
 
 interface ProductDetailUserProps {
-  //   image: string;
+  image: string | null;
   title: string;
   status: 'creator' | 'owner';
 }
@@ -18,8 +19,8 @@ const getStatus = (status: 'creator' | 'owner') => {
   }
 };
 
-const ProductDetailUser = ({
-  //   image,
+const NftCardDetailUser = ({
+  image,
   title,
   status,
 }: ProductDetailUserProps) => {
@@ -28,7 +29,7 @@ const ProductDetailUser = ({
   return (
     <div className="product-detail-user">
       <div className="product-detail-user__image">
-        {/* <Image src={image} alt={title} /> */}
+        <Image src={image || userPlaceholderImage} fill alt={title} />
       </div>
       <div className="product-detail-user__content">
         <p className="product-detail-user__status">{statusText}</p>
@@ -38,4 +39,4 @@ const ProductDetailUser = ({
   );
 };
 
-export default ProductDetailUser;
+export default NftCardDetailUser;

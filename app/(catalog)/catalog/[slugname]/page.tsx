@@ -9,7 +9,7 @@ import { INftCard } from '@/types/nfts/INftCard';
 export default async function NftPage({
   params,
 }: {
-  params: { slugname: string };
+  params: Promise<{ slugname: string }>;
 }) {
   const { slugname } = await params;
   const productData: INftCard = await getCardData(slugname);

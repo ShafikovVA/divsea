@@ -40,7 +40,7 @@ const CardFilters = () => {
   const debouncedApplyFilters = useRef(
     debounce((func: Parameters<typeof dispatch>[0]) => {
       dispatch(func);
-    }, 100),
+    }, 1000),
   ).current;
 
   const onFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -10,7 +10,9 @@ const UsersBidList = ({ usersBidList }: IUsersBidList) => {
   return (
     <div className="users-bid-list">
       {usersBidList && usersBidList.length > 0 ? (
-        usersBidList.map((userBid) => <UserBid key={userBid.id} {...userBid} />)
+        usersBidList.map((userBid) => (
+          <UserBid key={userBid.userName} {...userBid} />
+        ))
       ) : (
         <div className="users-bid-list__empty">
           <p className="users-bid-list__empty-text">No bids yet</p>

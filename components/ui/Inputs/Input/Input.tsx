@@ -33,7 +33,7 @@ const Input = (props: IInputProps) => {
   } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState<string | undefined>(value);
-  const [isAnimationUp, setIsAnimationUp] = useState(false);
+  const [isAnimationUp, setIsAnimationUp] = useState(value ?? false);
   const InputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value;
     if (type === 'number' && maxLength > 0 && value.length > maxLength) {

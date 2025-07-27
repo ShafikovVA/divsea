@@ -29,7 +29,7 @@ export const NftCard = (props: INftCardProps) => {
   };
 
   return (
-    <div className={`product-card ${big ? 'big' : ''}`}>
+    <article className={`product-card ${big ? 'big' : ''}`}>
       <div className="product-card__picture">
         {image ? (
           <Image
@@ -62,7 +62,7 @@ export const NftCard = (props: INftCardProps) => {
           PLACE BID
         </Button>
       </div>
-    </div>
+    </article>
   );
 };
 

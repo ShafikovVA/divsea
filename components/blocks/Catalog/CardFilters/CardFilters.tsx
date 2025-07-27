@@ -1,43 +1,54 @@
 'use client';
-import { useState, useRef } from 'react';
+import { memo, useRef } from 'react';
 import Input from '@/components/ui/Inputs/Input/Input';
-import { INftsFilters } from '@/types/nfts/INftFilters';
 import { useAppDispatch } from '@/store/hooks';
-import { getNfts } from '@/store/reducers/business/nftsReducer';
 import { debounce } from '@/utils/debounce';
 import CategoryIcon from '@/assets/icons/catalog/category.svg';
 import CollectionIcon from '@/assets/icons/catalog/collection.svg';
 import PriceIcon from '@/assets/icons/catalog/price.svg';
+import {
+  selectCatalogFilter,
+  setCategory,
+  setCollection,
+  setPrice,
+} from '@/store/reducers/filters/catalogFilterReducer';
+import { useSelector } from 'react-redux';
+import { ECatalogFilters } from '@/types/nfts/ICatalog';
+import useCatalogFilterUrl from '@/lib/hooks/filters/useCatalogFilterUrl';
 
-const CardFilters = () => {
-  const [filters, setFilters] = useState<INftsFilters>({});
+const CardFilters = memo(() => {
   const dispatch = useAppDispatch();
+  const { category, collection, price, page } =
+    useSelector(selectCatalogFilter);
+
+  useCatalogFilterUrl({ category, collection, price, page });
 
   const debouncedApplyFilters = useRef(
-    debounce((filters: INftsFilters) => {
-      dispatch(getNfts({ filters }));
+    debounce((func: Parameters<typeof dispatch>[0]) => {
+      dispatch(func);
     }, 2000),
   ).current;
 
   const onFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newFilters = { ...filters };
-    if (filters[e.target.name] && e.target.value === '') {
-      newFilters[e.target.name] = e.target.value;
-      delete filters[e.target.name];
-      setFilters({ ...filters });
-    } else {
-      newFilters[e.target.name] = e.target.value;
+    switch (e.target.name) {
+      case ECatalogFilters.CATEGORY:
+        debouncedApplyFilters(setCategory(e.target.value));
+        break;
+      case ECatalogFilters.COLLECTION:
+        debouncedApplyFilters(setCollection(e.target.value));
+        break;
+      case ECatalogFilters.PRICE:
+        debouncedApplyFilters(setPrice(e.target.value));
+        break;
     }
-
-    setFilters(newFilters);
-    debouncedApplyFilters(newFilters);
   };
 
   return (
     <div className={'catalog__filters'}>
       <Input
         onChange={(e) => onFilterChange(e)}
-        name="category"
+        value={category}
+        name={ECatalogFilters.CATEGORY}
         button="outline"
         placeholder="Category"
         maxLength={25}
@@ -45,7 +56,8 @@ const CardFilters = () => {
       />
       <Input
         onChange={(e) => onFilterChange(e)}
-        name="collection"
+        value={collection}
+        name={ECatalogFilters.COLLECTION}
         button="outline"
         placeholder="Collection"
         maxLength={25}
@@ -53,7 +65,8 @@ const CardFilters = () => {
       />
       <Input
         onChange={(e) => onFilterChange(e)}
-        name="price"
+        value={String(price)}
+        name={ECatalogFilters.PRICE}
         button="outline"
         placeholder="Price"
         type="number"
@@ -62,6 +75,6 @@ const CardFilters = () => {
       />
     </div>
   );
-};
+});
 
 export default CardFilters;

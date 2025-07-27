@@ -1,5 +1,5 @@
-import { INftCard } from '@/types/nfts/INftCard';
 import { NextRequest, NextResponse } from 'next/server';
+import { INfts } from '@/types/nfts/INfts';
 
 export const GET = async (request: NextRequest) => {
   const { searchParams } = request.nextUrl;
@@ -9,6 +9,6 @@ export const GET = async (request: NextRequest) => {
   ).catch(() => {
     return NextResponse.error();
   });
-  const data: INftCard[] = await response.json();
+  const data: INfts = await response.json();
   return NextResponse.json(data);
 };

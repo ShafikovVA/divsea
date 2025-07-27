@@ -7,6 +7,5 @@ export interface INfts {
   last: number;
   pages: number;
   items: number;
-  pending: boolean;
   data: INftCard[];
 }

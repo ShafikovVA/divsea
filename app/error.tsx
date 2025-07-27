@@ -10,7 +10,6 @@ const Error = ({ error, reset }: IErrorProps) => {
   useEffect(() => {
     console.error(error);
   }, [error]);
-  console.log(error);
 
   return (
     <div className="container">

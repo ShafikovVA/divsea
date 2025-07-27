@@ -33,9 +33,9 @@ const Header = () => {
         <div className="container">
           <div className="header__content">
             <div className="header__left">
-              <div className="header__logo">
+              <Link href="/" className="header__logo">
                 <Image src={adaptive.isTable ? logo2 : logo} alt="logo" />
-              </div>
+              </Link>
               <nav>
                 <ul>
                   <li>

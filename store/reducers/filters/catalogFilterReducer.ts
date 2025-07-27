@@ -1,8 +1,12 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ECatalogFilters, ICatalogFilters } from '@/types/nfts/ICatalog';
 
+const initialUrl = new URL(window.location.href).searchParams;
+const defaultFilters = Object.fromEntries(initialUrl.entries());
+
 const initialState: ICatalogFilters = {
   page: '1',
+  ...defaultFilters,
 };
 
 const setFilter: (

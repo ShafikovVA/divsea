@@ -35,7 +35,10 @@ export const CardList = () => {
 
   const onPageChange = async (page: number) => {
     setCurrentPage(page);
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    });
   };
 
   return (

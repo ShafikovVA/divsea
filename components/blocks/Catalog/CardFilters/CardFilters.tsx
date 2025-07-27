@@ -1,5 +1,5 @@
 'use client';
-import { memo, useRef } from 'react';
+import { useRef } from 'react';
 import Input from '@/components/ui/Inputs/Input/Input';
 import { useAppDispatch } from '@/store/hooks';
 import { debounce } from '@/utils/debounce';
@@ -16,31 +16,35 @@ import { useSelector } from 'react-redux';
 import { ECatalogFilters } from '@/types/nfts/ICatalog';
 import useCatalogFilterUrl from '@/lib/hooks/filters/useCatalogFilterUrl';
 
-const CardFilters = memo(() => {
+const CardFilters = () => {
   const dispatch = useAppDispatch();
   const { category, collection, price, page } =
     useSelector(selectCatalogFilter);
+
+  const filter = (name: string, value: string) => {
+    switch (name) {
+      case ECatalogFilters.CATEGORY:
+        debouncedApplyFilters(setCategory(value));
+        break;
+      case ECatalogFilters.COLLECTION:
+        debouncedApplyFilters(setCollection(value));
+        break;
+      case ECatalogFilters.PRICE:
+        debouncedApplyFilters(setPrice(value));
+        break;
+    }
+  };
 
   useCatalogFilterUrl({ category, collection, price, page });
 
   const debouncedApplyFilters = useRef(
     debounce((func: Parameters<typeof dispatch>[0]) => {
       dispatch(func);
-    }, 2000),
+    }, 100),
   ).current;
 
   const onFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    switch (e.target.name) {
-      case ECatalogFilters.CATEGORY:
-        debouncedApplyFilters(setCategory(e.target.value));
-        break;
-      case ECatalogFilters.COLLECTION:
-        debouncedApplyFilters(setCollection(e.target.value));
-        break;
-      case ECatalogFilters.PRICE:
-        debouncedApplyFilters(setPrice(e.target.value));
-        break;
-    }
+    filter(e.target.name, e.target.value);
   };
 
   return (
@@ -75,6 +79,6 @@ const CardFilters = memo(() => {
       />
     </div>
   );
-});
+};
 
 export default CardFilters;

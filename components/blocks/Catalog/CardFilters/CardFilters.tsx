@@ -18,8 +18,7 @@ import useCatalogFilterUrl from '@/lib/hooks/filters/useCatalogFilterUrl';
 
 const CardFilters = () => {
   const dispatch = useAppDispatch();
-  const { category, collection, price, page } =
-    useSelector(selectCatalogFilter);
+  const { category, collection, price } = useSelector(selectCatalogFilter);
 
   const filter = (name: string, value: string) => {
     switch (name) {
@@ -35,7 +34,7 @@ const CardFilters = () => {
     }
   };
 
-  useCatalogFilterUrl({ category, collection, price, page });
+  useCatalogFilterUrl({ category, collection, price });
 
   const debouncedApplyFilters = useRef(
     debounce((func: Parameters<typeof dispatch>[0]) => {

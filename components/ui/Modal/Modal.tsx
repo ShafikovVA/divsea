@@ -20,8 +20,12 @@ const Modal = ({ index, title, children }: IModalProps) => {
   useClickOutside(modalContentRef, handleClose);
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    document.body.style.marginRight = (
+      document.body.offsetWidth - document.body.clientWidth
+    ).toString();
     return () => {
       document.body.style.overflow = 'auto';
+      document.body.style.marginRight = '0';
     };
   }, []);
   return (

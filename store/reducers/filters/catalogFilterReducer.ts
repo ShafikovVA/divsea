@@ -5,7 +5,6 @@ const initialUrl = new URL(window.location.href).searchParams;
 const defaultFilters = Object.fromEntries(initialUrl.entries());
 
 const initialState: ICatalogFilters = {
-  page: '1',
   ...defaultFilters,
 };
 
@@ -14,11 +13,6 @@ const setFilter: (
 ) => CaseReducer<ICatalogFilters, PayloadAction<string>> =
   (name) => (state, action) => {
     switch (name) {
-      case ECatalogFilters.PAGE:
-        return {
-          ...state,
-          page: String(action.payload),
-        };
       case ECatalogFilters.CATEGORY:
         return { ...state, category: String(action.payload), page: '1' };
       case ECatalogFilters.COLLECTION:
@@ -36,7 +30,6 @@ export const catalogFilterSlice = createSlice({
   name: 'catalogFilters',
   initialState,
   reducers: {
-    setPage: setFilter(ECatalogFilters.PAGE),
     setCategory: setFilter(ECatalogFilters.CATEGORY),
     setCollection: setFilter(ECatalogFilters.COLLECTION),
     setPrice: setFilter(ECatalogFilters.PRICE),
@@ -48,7 +41,7 @@ export const catalogFilterSlice = createSlice({
   },
 });
 
-export const { setPage, setCategory, setCollection, setPrice } =
+export const { setCategory, setCollection, setPrice } =
   catalogFilterSlice.actions;
 
 export const { selectCatalogFilter } = catalogFilterSlice.selectors;

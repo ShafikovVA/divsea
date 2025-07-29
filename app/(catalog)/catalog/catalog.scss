@@ -1,3 +1,5 @@
+@use 'styles/media';
+
 .catalog {
   padding-top: 155px;
 
@@ -11,6 +13,12 @@
     font-size: 45px;
     line-height: 30px;
     padding-bottom: 45px;
+
+    @include media.mobM {
+      font-size: 45px;
+      line-height: 45px;
+      padding-bottom: 35px;
+    }
   }
 
   &__filters {
@@ -18,6 +26,11 @@
     justify-content: center;
     gap: 32px;
     margin-bottom: 100px;
+
+    @include media.mobM {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
   }
 
   &__cardList {
@@ -28,6 +41,11 @@
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 100px;
+    }
+    &-card-row {
+      display: flex;
+      gap: 48px 28px;
+      justify-content: center;
     }
   }
 

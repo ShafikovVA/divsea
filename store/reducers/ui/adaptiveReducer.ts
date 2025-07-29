@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IAdaptiveState {
+  isDeskS: boolean;
   isMobile: boolean;
   isTable: boolean;
 }
 
 const initialState: IAdaptiveState = {
+  isDeskS: false,
   isMobile: false,
   isTable: false,
 };
@@ -26,6 +28,12 @@ export const adaptiveSlice = createSlice({
         isTable: action.payload,
       };
     },
+    setIsDeskS: (state, action: PayloadAction<boolean>) => {
+      return {
+        ...state,
+        isDeskS: action.payload,
+      };
+    },
   },
   selectors: {
     adaptiveSelector: (state) => {
@@ -35,7 +43,7 @@ export const adaptiveSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setIsMobile, setIsTable } = adaptiveSlice.actions;
+export const { setIsMobile, setIsTable, setIsDeskS } = adaptiveSlice.actions;
 
 export const { adaptiveSelector } = adaptiveSlice.selectors;
 

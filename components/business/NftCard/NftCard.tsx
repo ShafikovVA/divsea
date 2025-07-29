@@ -36,6 +36,7 @@ export const NftCard = (props: INftCardProps) => {
             src={image}
             alt={`${title} image`}
             fill
+            loading="lazy"
             sizes="(max-width: 768px) 179.86px, 252.9px"
             style={{ objectFit: 'cover' }}
           />

@@ -1,55 +1,27 @@
-import { INfts } from '@/types/nfts/INfts';
-import { useQuery } from '@tanstack/react-query';
+import { INfts, INftsDto } from '@/types/nfts/INfts';
 import { ICatalogFilters } from '@/types/nfts/ICatalog';
-
-export const initialData: INfts = {
-  first: 0,
-  prev: 0,
-  next: 0,
-  last: 0,
-  pages: 0,
-  items: 0,
-  data: [],
-};
-
-export const getCatalog = async ({
-  page,
-  filters,
-  perPage,
-}: {
+export interface ICatalog {
   page?: number;
   filters?: ICatalogFilters;
-  perPage?: string;
-}) => {
+  perPage?: number;
+}
+
+export const getCatalog = async ({ page, filters, perPage = 20 }: ICatalog) => {
   const queryString = new URLSearchParams({
-    ...filters,
     _page: page?.toString() || '',
-    _per_page: perPage || '',
+    _per_page: perPage?.toString() || '',
+    ...filters,
   }).toString();
   const response = await fetch(
     `/api/catalog${queryString ? '?' + queryString : ''}`,
   );
   if (!response.ok) {
     console.error('Failed to fetch catalog');
-    return initialData as INfts;
+    return {} as INfts;
   }
-  const responseData: INfts = await response.json();
+  const { next, data }: INftsDto = await response.json();
+  const responseData: INfts = { list: data, nextPage: next };
   return responseData;
 };
 
 export default getCatalog;
-
-export const useCatalog = ({
-  page,
-  filters,
-  perPage = '20',
-}: {
-  page?: number;
-  filters?: ICatalogFilters;
-  perPage?: string;
-}) => {
-  return useQuery<INfts>({
-    queryKey: ['catalog', page, filters, perPage],
-    queryFn: () => getCatalog({ page, filters, perPage }),
-  });
-};

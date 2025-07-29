@@ -1,6 +1,10 @@
 import { useEffect, useLayoutEffect } from 'react';
 import { useAppDispatch } from '@/store/hooks';
-import { setIsMobile, setIsTable } from '@/store/reducers/ui/adaptiveReducer';
+import {
+  setIsMobile,
+  setIsTable,
+  setIsDeskS,
+} from '@/store/reducers/ui/adaptiveReducer';
 
 export const useAdaptive = () => {
   const dispatch = useAppDispatch();
@@ -15,9 +19,15 @@ export const useAdaptive = () => {
     } else {
       dispatch(setIsTable(false));
     }
+    if (window.innerWidth <= 1365) {
+      dispatch(setIsDeskS(true));
+    } else {
+      dispatch(setIsDeskS(false));
+    }
   };
   useLayoutEffect(() => {
     window.addEventListener('resize', setAdaptive);
+    return () => window.addEventListener('resize', setAdaptive);
   }, []);
   useEffect(() => {
     setAdaptive();

@@ -4,12 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    opacity: 0;
-    display: none;
-  }
 }
 
 body {

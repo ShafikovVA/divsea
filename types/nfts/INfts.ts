@@ -1,6 +1,6 @@
 import { INftCard } from './INftCard';
 
-export interface INfts {
+export interface INftsDto {
   first: number;
   prev: number;
   next: number;
@@ -8,4 +8,9 @@ export interface INfts {
   pages: number;
   items: number;
   data: INftCard[];
+}
+
+export interface INfts {
+  list: INftCard[];
+  nextPage: number;
 }

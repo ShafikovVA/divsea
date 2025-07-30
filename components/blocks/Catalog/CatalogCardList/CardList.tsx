@@ -1,34 +1,16 @@
 'use client';
 import ProductCard from '@/components/business/NftCard/NftCard';
-
-import ProductCardSkeleton from '@/components/business/NftCard/NftCard.skeleton';
 import { useSelector } from 'react-redux';
 import { selectCatalogFilter } from '@/store/reducers/filters/catalogFilterReducer';
 import { useCatalog } from '@/lib/hooks/blocks/useCatalog';
-
-const Skeletons = () => (
-  <div className="catalog__cardList-cards">
-    {Array.from({ length: 8 }, (_, index) => (
-      <ProductCardSkeleton key={index} />
-    ))}
-  </div>
-);
+import CardListSkeletons from './CardList.skeleton';
 
 export const CardList = () => {
   const filters = useSelector(selectCatalogFilter);
-  const {
-    status,
-    listRef,
-    virtualizer,
-    error,
-    isFetching,
-    allCardRows,
-    allCards,
-  } = useCatalog({
+  const { listRef, virtualizer, isFetching, allCardRows } = useCatalog({
     page: 1,
     filters,
   });
-  const nfts = allCards ?? [];
 
   return (
     <>
@@ -39,6 +21,7 @@ export const CardList = () => {
             height: `${virtualizer.getTotalSize()}px`,
             width: '100%',
             position: 'relative',
+            marginBottom: allCardRows.length ? 48 : 0,
           }}
         >
           {virtualizer.getVirtualItems().map((virtualItem) => {
@@ -49,7 +32,7 @@ export const CardList = () => {
               isLoaderRow || (
                 <div
                   className="catalog__cardList-card-row"
-                  key={virtualItem.index}
+                  key={virtualItem.key}
                   style={{
                     position: 'absolute',
                     height: `${virtualItem.size}px`,
@@ -66,7 +49,7 @@ export const CardList = () => {
             );
           })}
         </div>
-        {isFetching && nfts.length === 0 && Skeletons()}
+        {isFetching && <CardListSkeletons />}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useAppSelector } from '@/store/hooks';
 import { adaptiveSelector } from '@/store/reducers/ui/adaptiveReducer';
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import getCatalog, { ICatalog } from '@/lib/api/nfts';
 
@@ -14,18 +14,19 @@ const setRowItemParams = (
     rowItemsQuantity: 4,
     rowHeight: 405,
   };
-  if (isDeskS) {
-    rowItemParams.rowHeight = 283;
-    rowItemParams.rowItemsQuantity = 4;
+  if (isMobile) {
+    rowItemParams.rowItemsQuantity = 1;
+    rowItemParams.rowHeight = 405;
   }
   if (isTable) {
     rowItemParams.rowHeight = 283;
     rowItemParams.rowItemsQuantity = 3;
   }
-  if (isMobile) {
-    rowItemParams.rowItemsQuantity = 1;
-    rowItemParams.rowHeight = 405;
+  if (isDeskS) {
+    rowItemParams.rowHeight = 283;
+    rowItemParams.rowItemsQuantity = 4;
   }
+
   return rowItemParams;
 };
 
@@ -47,27 +48,39 @@ export const useCatalog = ({ page, filters, perPage = 20 }: ICatalog) => {
   });
 
   const { isMobile, isTable, isDeskS } = useAppSelector(adaptiveSelector);
+  console.log(isMobile);
+
   const { rowItemsQuantity, rowHeight } = setRowItemParams(
     isMobile,
     isTable,
     isDeskS,
   );
 
-  const allCards = data ? data.pages.flatMap((d) => d.list) : [];
-  const allCardRows = Array.from(
-    { length: Math.ceil(allCards.length / rowItemsQuantity) },
-    (_, i) =>
-      allCards.slice(
-        i * rowItemsQuantity,
-        i * rowItemsQuantity + rowItemsQuantity,
+  const allCards = useMemo(
+    () => (data ? data.pages.flatMap((d) => d.list) : []),
+    [data],
+  );
+  const allCardRows = useMemo(
+    () =>
+      Array.from(
+        { length: Math.ceil(allCards.length / rowItemsQuantity) },
+        (_, i) =>
+          allCards.slice(
+            i * rowItemsQuantity,
+            i * rowItemsQuantity + rowItemsQuantity,
+          ),
       ),
+    [allCards, rowItemsQuantity],
   );
   const listRef = useRef<HTMLDivElement | null>(null);
 
   const virtualizer = useWindowVirtualizer({
-    count: hasNextPage ? allCardRows.length + perPage : allCardRows.length,
+    count: allCardRows.length,
     estimateSize: () => rowHeight,
-    scrollMargin: listRef.current?.offsetTop ?? 0,
+    scrollMargin: useMemo(
+      () => listRef.current?.offsetTop ?? 0,
+      [listRef.current?.offsetTop],
+    ),
     overscan: 2,
     gap: 48,
   });

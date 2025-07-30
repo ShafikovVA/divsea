@@ -68,7 +68,7 @@ const CardFilters = () => {
       />
       <Input
         onChange={(e) => onFilterChange(e)}
-        value={String(price)}
+        value={price}
         name={ECatalogFilters.PRICE}
         button="outline"
         placeholder="Price"

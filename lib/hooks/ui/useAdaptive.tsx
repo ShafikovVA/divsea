@@ -9,17 +9,17 @@ import {
 export const useAdaptive = () => {
   const dispatch = useAppDispatch();
   const setAdaptive = () => {
-    if (window.innerWidth <= 767) {
+    if (window.innerWidth <= 719) {
       dispatch(setIsMobile(true));
     } else {
       dispatch(setIsMobile(false));
     }
-    if (window.innerWidth <= 1023) {
+    if (window.innerWidth <= 1023 && window.innerWidth > 719) {
       dispatch(setIsTable(true));
     } else {
       dispatch(setIsTable(false));
     }
-    if (window.innerWidth <= 1365) {
+    if (window.innerWidth <= 1365 && window.innerWidth > 1023) {
       dispatch(setIsDeskS(true));
     } else {
       dispatch(setIsDeskS(false));

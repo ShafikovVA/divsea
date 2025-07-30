@@ -17,11 +17,9 @@ const InputTypeContainer = (props: IInputButtonContainerProps) => {
       return (
         <div className={cn('button-input-container')}>
           {children}
-          {
-            <span className="button-input-container__value">
-              {value || placeholder}
-            </span>
-          }
+          <span className="button-input-container__value">
+            {value || placeholder}
+          </span>
         </div>
       );
     default:

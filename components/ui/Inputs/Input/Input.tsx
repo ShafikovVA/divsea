@@ -1,20 +1,26 @@
-import { HTMLInputTypeAttribute, RefObject, useState } from 'react';
+import {
+  ChangeEvent,
+  HTMLInputTypeAttribute,
+  InputHTMLAttributes,
+  ReactNode,
+  RefObject,
+  useState,
+} from 'react';
 import './input.scss';
 import cn from 'classnames';
 import InputTypeContainer from './InputButtonContainer';
 
-export interface IInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: RefObject<HTMLInputElement>;
   type?: HTMLInputTypeAttribute;
   className?: string;
   placeholder?: string;
   name?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  icon?: React.ReactNode | string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  icon?: ReactNode | string;
   button?: 'primary' | 'outline';
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 const Input = (props: IInputProps) => {
@@ -32,9 +38,9 @@ const Input = (props: IInputProps) => {
     ...rest
   } = props;
   const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState<string | undefined>(value);
+  const [inputValue, setInputValue] = useState<string>(value ?? '');
   const [isAnimationUp, setIsAnimationUp] = useState(value ?? false);
-  const InputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const InputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value;
     if (type === 'number' && maxLength > 0 && value.length > maxLength) {
       value = value.slice(0, maxLength);

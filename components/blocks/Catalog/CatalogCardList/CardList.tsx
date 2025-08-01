@@ -4,13 +4,15 @@ import { useSelector } from 'react-redux';
 import { selectCatalogFilter } from '@/store/reducers/filters/catalogFilterReducer';
 import { useCatalog } from '@/lib/hooks/blocks/useCatalog';
 import CardListSkeletons from './CardList.skeleton';
+import NotFoundIcon from '@/assets/icons/catalog/not-found.svg';
 
 export const CardList = () => {
   const filters = useSelector(selectCatalogFilter);
-  const { listRef, virtualizer, isFetching, allCardRows } = useCatalog({
-    page: 1,
-    filters,
-  });
+  const { listRef, virtualizer, isFetching, isFetchingNextPage, allCardRows } =
+    useCatalog({
+      page: 1,
+      filters,
+    });
 
   return (
     <>
@@ -49,7 +51,16 @@ export const CardList = () => {
             );
           })}
         </div>
-        {isFetching && <CardListSkeletons />}
+        {!isFetching && allCardRows.length === 0 && (
+          <div className="catalog__cardList-empty">
+            <NotFoundIcon />
+            <p>
+              No NFTs found matching your criteria.
+              <br /> Try adjusting your filters or search for something else
+            </p>
+          </div>
+        )}
+        {isFetching && !isFetchingNextPage && <CardListSkeletons />}
       </div>
     </>
   );

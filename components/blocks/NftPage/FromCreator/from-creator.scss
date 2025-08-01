@@ -1,0 +1,57 @@
+@use '/styles/media';
+@use '/styles/typography';
+@use '/styles/variables';
+
+.from-creator {
+  gap: 100px;
+  padding-bottom: 160px;
+  overflow: hidden;
+
+  @include media.breakpoint-down('deskS') {
+    gap: 67px;
+    padding-bottom: 113px;
+  }
+  @include media.breakpoint-down('mobM') {
+    gap: 63px;
+    padding-bottom: 125px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    @include media.deskS {
+      gap: 31px;
+    }
+    @include media.mobM {
+      gap: 50px;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    overflow: visible;
+    &-slide {
+      width: fit-content;
+    }
+  }
+
+  .slider {
+    width: 780px;
+
+    &__buttons {
+      margin-top: 10px;
+      @include media.breakpoint-down('deskS') {
+        margin-top: 25px;
+      }
+      @include media.breakpoint-down('mobM') {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  h2 {
+    @include typography.H3;
+    color: variables.$greyC3;
+  }
+}

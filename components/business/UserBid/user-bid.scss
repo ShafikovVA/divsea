@@ -8,14 +8,19 @@
   gap: 15px;
   background-color: variables.$white;
   border-radius: 11px;
-  box-shadow: -5.85px 11.7px 20.26px 0px #10101026;
   padding: 18px 50px 18px 18px;
+  transition: 0.3s variables.$transition-type;
+  box-shadow: 0px 2.41px 28.9px 0px #C5C5C540;
 
   @include media.deskS {
     padding: 13px 46px 13px 12px;
   }
   @include media.tabM {
     padding: 12px 35px 12px 12px;
+  }
+
+  &:hover {
+    box-shadow: -5.85px 11.7px 20.26px 0px #10101026;
   }
 
   &__image {

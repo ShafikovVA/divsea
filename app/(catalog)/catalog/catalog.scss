@@ -1,4 +1,6 @@
-@use 'styles/media';
+@use '/styles/media';
+@use '/styles/typography';
+@use '/styles/variables';
 
 .catalog {
   padding-top: 155px;
@@ -28,8 +30,10 @@
     margin-bottom: 100px;
 
     @include media.mobM {
-      flex-wrap: wrap;
       gap: 20px;
+    }
+    @include media.mobS {
+      flex-wrap: wrap;
     }
   }
 
@@ -45,6 +49,19 @@
       display: flex;
       gap: 48px 28px;
       justify-content: center;
+    }
+    &-empty {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      p {
+        @include typography.P4;
+        color: variables.$grey;
+      }
+    
     }
   }
 

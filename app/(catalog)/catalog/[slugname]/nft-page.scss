@@ -1,19 +1,37 @@
 @use '/styles/media';
+@use '/styles/variables';
 
 .nft-page {
-    padding-top: 155px;
+  padding-top: 155px;
 
-    @include media.tabM {
-      padding-top: 90px;
+  @include media.tabM {
+    padding-top: 90px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    @include media.mobM {
+      width: 100%;
+      align-items: center;
     }
+  }
 
-    .container {
-      display: flex;
-      flex-direction: column;
+  &__bid {
+    display: flex;
+    gap: 54px;
+    margin-bottom: 120px;
+  }
+  &__bidFormContainer {
+    width: 344px;
+    height: 474px;
 
-      @include media.mobM {
-        width: 100%;
-        align-items: center;
-      }
-    }
+    border-radius: 12px;
+    box-shadow: 11.95px 11.95px 41.54px 0px #0000001F;
+
+    padding: 25px 14px;
+    background: variables.$white;
+    display: flex;
+  }
 }

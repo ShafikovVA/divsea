@@ -42,7 +42,6 @@ export const adaptiveSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { setIsMobile, setIsTable, setIsDeskS } = adaptiveSlice.actions;
 
 export const { adaptiveSelector } = adaptiveSlice.selectors;

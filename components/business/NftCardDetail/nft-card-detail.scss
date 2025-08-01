@@ -59,6 +59,10 @@
         max-width: 279.37px;
         max-height: 245.69px;
       }
+
+      img {
+        object-fit: cover;
+      }
 	}
 
 	&__content {

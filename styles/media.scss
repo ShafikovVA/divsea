@@ -5,6 +5,7 @@ $breakpoints: (
   'deskS': 1365px,
   'tabM': 1023px,
   'mobM': 719px,
+  'mobS': 375px,
 );
 
 @mixin breakpoint-down($breakpoint) {
@@ -31,6 +32,11 @@ $breakpoints: (
 }
 @mixin mobM {
   @include breakpoint-down('mobM') {
+    @content;
+  }
+}
+@mixin mobS {
+  @include breakpoint-down('mobS') {
     @content;
   }
 }

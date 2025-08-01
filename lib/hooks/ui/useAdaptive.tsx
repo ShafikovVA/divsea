@@ -9,7 +9,7 @@ import {
 export const useAdaptive = () => {
   const dispatch = useAppDispatch();
   const setAdaptive = () => {
-    if (window.innerWidth <= 719) {
+    if (window.innerWidth <= 719 && window.innerWidth > 0) {
       dispatch(setIsMobile(true));
     } else {
       dispatch(setIsMobile(false));

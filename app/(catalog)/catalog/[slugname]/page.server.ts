@@ -21,3 +21,16 @@ export const getCardData = async (slugname: string) => {
   }
   return cardDataJson[0];
 };
+export const getCardsFromCreatorData = async () => {
+  const cardsData = await fetch(`${process.env.BASE_URL}/cards?_limit=10`, {
+    method: 'GET',
+  });
+  if (!cardsData.ok) {
+    if (cardsData.status === 404) {
+      return [];
+    }
+    throw new Error('Failed to fetch data');
+  }
+
+  return await cardsData.json();
+};

@@ -1,40 +1,21 @@
 import { ICatalogFilters } from '@/types/nfts/ICatalog';
 import { useEffect } from 'react';
+import { getCatalogFiltersPath } from '@/utils/filters/get-catalog-filters-path';
 
 const useCatalogFilterUrl = ({
   category,
   collection,
   price,
-  page,
 }: ICatalogFilters) => {
   const currentUrl = window.location.href;
 
-  const urlSerchParams = new URLSearchParams();
+  const urlSearchParams = getCatalogFiltersPath({
+    category,
+    collection,
+    price,
+  });
 
-  if (category) {
-    urlSerchParams.set('category', category);
-  } else {
-    urlSerchParams.delete('category');
-  }
-
-  if (collection) {
-    urlSerchParams.set('collection', collection);
-  } else {
-    urlSerchParams.delete('collection');
-  }
-
-  if (price) {
-    urlSerchParams.set('price', price);
-  } else {
-    urlSerchParams.delete('price');
-  }
-
-  if (page) {
-    urlSerchParams.set('page', page);
-  } else {
-    urlSerchParams.delete('page');
-  }
-  const queryString = urlSerchParams.toString();
+  const queryString = urlSearchParams.toString();
 
   useEffect(() => {
     history.pushState(
@@ -42,7 +23,7 @@ const useCatalogFilterUrl = ({
       currentUrl,
       `${window.location.pathname}${queryString ? `?${queryString}` : ''}`,
     );
-  }, [category, collection, price, page]);
+  }, [category, collection, price]);
 };
 
 export default useCatalogFilterUrl;

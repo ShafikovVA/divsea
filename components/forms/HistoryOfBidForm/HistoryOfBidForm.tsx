@@ -7,22 +7,24 @@ import Cardholder from '@/assets/icons/cardholder.svg';
 import InputsContainer from '@/components/ui/Inputs/SolderedInputContainer/InputsContainer';
 import Select from '@/components/ui/Select/Select';
 import Input from '@/components/ui/Inputs/Input/Input';
+import cn from 'classnames';
 
-interface IHistoryOfBidModalProps {
+interface IHistoryOfBidFormProps {
   data: IUserBid[];
+  min?: boolean;
 }
 
-const HistoryOfBidModal = ({ data }: IHistoryOfBidModalProps) => {
+const HistoryOfBidForm = ({ data, min }: IHistoryOfBidFormProps) => {
   return (
-    <div className="history-of-bid-modal">
-      <div className="history-of-bid-modal__header">
-        <h2 className="history-of-bid-modal__title">History of Bid</h2>
-        <div className="history-of-bid-modal__date">Oct 14, 2022</div>
+    <div className={cn('history-of-bid-form', { min })}>
+      <div className="history-of-bid-form__header">
+        <h2 className="history-of-bid-form__title">History of Bid</h2>
+        <div className="history-of-bid-form__date">Oct 14, 2022</div>
       </div>
-      <div className="history-of-bid-modal__userList">
+      <div className="history-of-bid-form__userList">
         <UsersBidList usersBidList={data} />
       </div>
-      <div className="history-of-bid-modal__controls">
+      <div className="history-of-bid-form__controls">
         <InputsContainer soldered>
           <Select
             primary
@@ -43,4 +45,4 @@ const HistoryOfBidModal = ({ data }: IHistoryOfBidModalProps) => {
   );
 };
 
-export default HistoryOfBidModal;
+export default HistoryOfBidForm;

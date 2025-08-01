@@ -41,7 +41,13 @@ $input-transition-delay: 0.2s;
       border-radius: 14.09px;
       
       @include media.deskS{
+        gap: 7px;
         border-radius: 10.02px;
+        padding: 12px;
+      }
+      @include media.mobM {
+        gap: 6px;
+        padding: 10px;
       }
   
       .input__placeholder {

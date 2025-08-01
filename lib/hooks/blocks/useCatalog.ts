@@ -48,7 +48,6 @@ export const useCatalog = ({ page, filters, perPage = 20 }: ICatalog) => {
   });
 
   const { isMobile, isTable, isDeskS } = useAppSelector(adaptiveSelector);
-  console.log(isMobile);
 
   const { rowItemsQuantity, rowHeight } = setRowItemParams(
     isMobile,
@@ -113,6 +112,7 @@ export const useCatalog = ({ page, filters, perPage = 20 }: ICatalog) => {
     virtualizer,
     error,
     isFetching,
+    isFetchingNextPage,
     allCards,
     allCardRows,
     hasNextPage,

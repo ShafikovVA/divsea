@@ -1,0 +1,12 @@
+@use '/styles/variables';
+
+.bid-history-chart {
+  display: flex;
+  background-color: variables.$white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 20.06px 20.06px 69.75px 0px #0000001F;
+  border: 1.14px solid #EDF2F7;
+  height: 474px;
+  width: 846px;
+}

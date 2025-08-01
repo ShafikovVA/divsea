@@ -1,10 +1,11 @@
 @use 'styles/media';
 @use 'styles/variables';
 
-.history-of-bid-modal {
+.history-of-bid-form {
   display: flex;
   flex-direction: column;
   width: 438.9px;
+  background-color: variables.$white;
   @include media.deskS {
     width: 312.14px;
   }
@@ -97,6 +98,58 @@
     @include media.deskS {
         font-size: 12.01px;
         line-height: 18.41px;
+    }
+  }
+
+  &.min {
+    .history-of-bid-form__title {
+      font-weight: 600;
+      font-size: 15.24px;
+      line-height: 22.01px;
+
+      @include media.deskS {
+        font-size: 10.84px;
+        line-height: 15.65px;
+      }
+    }
+    .history-of-bid-form__date {
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13.54px;
+
+      @include media.deskS {
+        font-weight: 400;
+        font-size: 7.83px;
+        line-height: 9.63px;
+      }
+    }
+    .history-of-bid-form__header {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-left: 9px;
+      margin-bottom: 18px;
+
+      @include media.deskS {
+        padding-left: 6px   ;
+        margin-bottom: 12px;
+      }
+    }
+    .users-bid-list {
+      max-height: 167px;
+      overflow: auto;
+    }
+    .user-bid {
+      height: 75px;
+      @include media.deskS {
+        height: 53px;
+      }
+      &__image {
+        min-width: 47px;
+        min-height: 47px;
+        max-width: 47px;
+        max-height: 47px;
+      }
     }
   }
 }

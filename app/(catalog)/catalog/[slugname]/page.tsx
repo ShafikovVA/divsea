@@ -9,7 +9,6 @@ import {
 import { INftCard } from '@/types/nfts/INftCard';
 import FromCreator from '@/components/blocks/NftPage/FromCreator/FromCreator';
 import NftBidStoryChart from '@/components/business/NftBidStoryChart/NftBidStoryChart';
-import HistoryOfBidForm from "@/components/forms/HistoryOfBidForm/HistoryOfBidForm";
 
 export async function generateMetadata({
   params,
@@ -44,7 +43,7 @@ export default async function NftPage({
           <div className="nft-page__bid">
             <NftBidStoryChart />
             <div className="nft-page__bidFormContainer">
-              <HistoryOfBidForm data={...productData.historyOfBid} min />
+              {/*<HistoryOfBidForm data={...productData.historyOfBid} min />*/}
             </div>
           </div>
         </div>
